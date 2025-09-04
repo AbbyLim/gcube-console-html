@@ -1,11 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
   // GNB
   var btnNav = document.querySelector(".btn__nav");
+	var gnb = document.querySelector(".gnb");
   if (btnNav) {
     btnNav.addEventListener("click", function () {
-	  document.documentElement.classList.toggle("nav-opened");
-	  btnNav.classList.toggle("is-active");
+			event.stopPropagation();
+			document.documentElement.classList.toggle("nav-opened");
+			btnNav.classList.toggle("is-active");
     });
+		document.addEventListener("click", function (event) {
+			if (gnb && !gnb.contains(event.target)) {
+				document.documentElement.classList.remove("nav-opened");
+				btnNav.classList.remove("is-active");
+			}
+		});
   }
 
   // 모달열기
@@ -178,4 +186,84 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 	resetFilterLayerStyle();
 	window.addEventListener("resize", resetFilterLayerStyle);
+
+	//알림레이어 호출
+	const isPC = () => window.innerWidth >= 750;
+  var notificationWrap = document.querySelector('.notification--wrap');
+  var notificationContent = document.querySelector('.notification--wrap .noti__content');
+  if (!notificationWrap) return;
+  var allNotiButtons = document.querySelectorAll('.btn__noti');
+  allNotiButtons.forEach(function(btn) {
+    btn.addEventListener('click', function(event) {
+      event.stopPropagation();
+      var isOpened = notificationWrap.classList.contains('is-opened');
+      if (isOpened) {
+        document.documentElement.classList.remove('noti-opened');
+        notificationWrap.classList.remove('is-opened');
+      } else {
+        document.documentElement.classList.add('noti-opened');
+        notificationWrap.classList.add('is-opened');
+      }
+    });
+  });
+	//워크로드 리스트(리스트형) 이벤트
+  document.addEventListener('click', function(event) {
+    if (!notificationContent || !notificationContent.contains(event.target)) {
+      document.documentElement.classList.remove('noti-opened');
+      notificationWrap.classList.remove('is-opened');
+    }
+  });
+	const listItems = document.querySelectorAll('.type-flex-body ul li');
+
+  // PC용 마우스 오버 이벤트
+  function setupPC() {
+    listItems.forEach((li) => {
+      li.addEventListener('mouseenter', onMouseEnter);
+      li.addEventListener('mouseleave', onMouseLeave);
+      // 모바일에서 추가된 이벤트 제거
+      const btnMore = li.querySelector('.btn__more-info');
+      if (btnMore) btnMore.removeEventListener('click', onBtnClick);
+    });
+  }
+
+  // 모바일용 버튼 클릭 이벤트
+  function setupMobile() {
+    listItems.forEach((li) => {
+      li.removeEventListener('mouseenter', onMouseEnter);
+      li.removeEventListener('mouseleave', onMouseLeave);
+      const btnMore = li.querySelector('.btn__more-info');
+      if (btnMore) btnMore.addEventListener('click', onBtnClick);
+    });
+  }
+
+  function onMouseEnter(e) {
+    e.currentTarget.classList.add('is-active');
+  }
+
+  function onMouseLeave(e) {
+    e.currentTarget.classList.remove('is-active');
+  }
+
+  function onBtnClick(e) {
+    // 버튼이 클릭된 li를 토글 is-active
+    const li = e.currentTarget.closest('li');
+    if (!li) return;
+    li.classList.toggle('is-active');
+  }
+
+  // 초기 이벤트 설정
+  function setupEvents() {
+    if (isPC()) {
+      setupPC();
+    } else {
+      setupMobile();
+    }
+  }
+
+  setupEvents();
+
+  // 화면 크기 변경시 이벤트 다시 설정
+  window.addEventListener('resize', () => {
+    setupEvents();
+  });
 });
