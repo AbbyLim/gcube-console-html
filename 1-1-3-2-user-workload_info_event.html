@@ -58,7 +58,7 @@
 								<li class="deploy">
 									<a href="javascript:;" class="depth1 is-active"><span>Deploy the workload</span></a>
 									<ul class="depth2">
-										<li><a href="1-1-workload_list_type-card.html" class="is-active">워크로드 관리</a></li>
+										<li><a href="1-0-workload_list_type-card.html" class="is-active">워크로드 관리</a></li>
 										<li><a href="">워크로드 지출내역</a></li>
 										<li><a href="">새 워크로드 생성</a></li>
 										<li><a href="">지정 노드 현황</a></li>
@@ -144,98 +144,77 @@
 		<!-- 워크로드 이용상세 -->
 		<div class="container">
 			<div class="container__inner">
-				<div class="workload__list--wrap">
+				<div class="workload__event--wrap">
 					<div class="detail__title--wrap">
 						<button type="button" class="btn__prev-page"><span class="blind">이전으로</span></button>
-						<h3>이용상세  -  #888 [<span class="tcolor4">RTX4090</span>]</h3>
+						<h3>배포 이벤트 - dep515</h3>
 						<div class="status--wrap">
 							<select name="">
-								<option value="">2025년</option>
-								<option value="">2024년</option>
-								<option value="">2023년</option>
-							</select>
-							<select name="">
-								<option value="">03월</option>
-								<option value="">02월</option>
-								<option value="">01월</option>
+								<option value="">10개</option>
+								<option value="">20개</option>
+								<option value="">30개</option>
+								<option value="">40개</option>
+								<option value="">50개</option>
+								<option value="">100개</option>
+								<option value="">150개</option>
 							</select>
 						</div>
 					</div>
-					<div class="type-flex--wrap">
-						<div class="type-flex flex-title">
-							<div class="flex-child w-all mo-w80">날짜</div>
-							<div class="flex-child w-all mo-w80">포인트</div>
-							<div class="flex-child w-all">금액</div>
-							<div class="flex-child w-all mo-w80">기본금액</div>
-							<div class="flex-child w-all">이용금액</div>
-							<div class="flex-child w-all pc-only">GPU모델</div> 
-							<div class="flex-child w-all pc-only">GPU이용율</div>
-							<div class="flex-child w-all pc-only">네트워크 이용량</div>
-							<div class="flex-child w-all pc-only">세부내역</div>
-						</div>
-						<div class="type-flex-body">
-							<ul>
-								<li>
-									<div class="type-flex flex-content">
-										<div class="flex-child w-all mo-w80"><a href="" class="no-deco">2025-02-13</a></div>
-										<div class="flex-child w-all mo-w80"><span class="tcolor3">-1,314.78P</span></div>
-										<div class="flex-child w-all">1,884원</div>
-										<div class="flex-child w-all mo-w80">1,111,884원</div>
-										<div class="flex-child w-all">123원</div>
-										<div class="flex-child w-all pc-only">RTX4090</div>
-										<div class="flex-child w-all pc-only">100%</div>
-										<div class="flex-child w-all pc-only">180.63KB</div>
-										<div class="flex-child w-all pc-only">
-											<button type="button" class="btn__default btn__detail2"><span>세부내역</span></button>
-										</div>
-								</li>
-								<!-- 단순 반복 -->
-								<li>
-									<div class="type-flex flex-content">
-										<div class="flex-child w-all mo-w80"><a href="" class="no-deco">2025-02-13</a></div>
-										<div class="flex-child w-all mo-w80"><span class="tcolor3">-1,314.78P</span></div>
-										<div class="flex-child w-all">1,884원</div>
-										<div class="flex-child w-all mo-w80">1,111,884원</div>
-										<div class="flex-child w-all">123원</div>
-										<div class="flex-child w-all pc-only">RTX4090</div>
-										<div class="flex-child w-all pc-only">100%</div>
-										<div class="flex-child w-all pc-only">180.63KB</div>
-										<div class="flex-child w-all pc-only">
-											<button type="button" class="btn__default btn__detail2"><span>세부내역</span></button>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="type-flex flex-content">
-										<div class="flex-child w-all mo-w80"><a href="" class="no-deco">2025-02-13</a></div>
-										<div class="flex-child w-all mo-w80"><span class="tcolor3">-1,314.78P</span></div>
-										<div class="flex-child w-all">1,884원</div>
-										<div class="flex-child w-all mo-w80">1,111,884원</div>
-										<div class="flex-child w-all">123원</div>
-										<div class="flex-child w-all pc-only">RTX4090</div>
-										<div class="flex-child w-all pc-only">100%</div>
-										<div class="flex-child w-all pc-only">180.63KB</div>
-										<div class="flex-child w-all pc-only">
-											<button type="button" class="btn__default btn__detail2"><span>세부내역</span></button>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</div>
-						<!-- 합계 -->
-						<div class="type-flex flex-foot ">
-							<div class="flex-child w-all mo-w80">합계</div>
-							<div class="flex-child w-all mo-w80"><span class="tcolor3">-1,314.78P</span></div>
-							<div class="flex-child w-all">1,884원</div>
-							<div class="flex-child w-all mo-w80">1,111,884원</div>
-							<div class="flex-child w-all">123원</div>
-							<div class="flex-child w-all pc-only"></div> 
-							<div class="flex-child w-all pc-only"></div>
-							<div class="flex-child w-all pc-only"></div>
-							<div class="flex-child w-all pc-only"></div>
-						</div>
+					<div class="event--wrap">
+						<dl class="event__item">
+							<dt><strong>2025-05-14</strong></dt>
+							<dd>
+								<ul class="event__list">
+									<li>
+										<dl class="event__content--item">
+											<dt>
+												<div class="status__info">
+													<strong>삭제</strong>
+													<div class="status__date">
+														<span class="date">2024-12-11</span>
+														<span class="time">11:30:56</span>
+													</div>
+												</div>
+												<div class="event__reason">
+													이벤트 사유 :
+													<strong class="tcolor5">unhealthy</strong>
+												</div>
+												<div class="occurrence__date">
+													<span>최소 발생일시</span>
+													<div class="status__date">
+														<span class="date">2024-12-11</span>
+														<span class="time">11:30:56</span>
+													</div>
+												</div>
+											</dt>
+											<dd>
+												<div class="tooltip--wrap">
+													<button type="button" class="btn__tooltip"><span class="blind">툴팁열기/닫기버튼</span></button>
+													<div class="tooltip__content">
+														<ul class="event__tooltip__info">
+															<li>
+																<span>이벤트 유형 :</span>
+																<span>경고</span>
+															</li>
+															<li>
+																<span>보고구성요소 :</span>
+																<span>kubelet</span>
+															</li>
+															<li>
+																<span>이벤트대상유형 :</span>
+																<span>POD</span>
+															</li>
+														</ul>
+													</div>
+												</div>
+												<div class="event__content--text">Startup probe failed: Get "http://10.249.84.81:15021/healthz/ready": dial tcp 10.249.84.81:15021: connect: connection refused Startup probe failed: Get "http://10.249.84.81:15021/healthz/ready": dial tcp 10.249.84.81:15021: connect: connection refused</div>
+											</dd>
+										</dl>
+									</li>
+								</ul>
+							</dd>
+						</dl>
 					</div>
-					<p class="noti__text">※ 각 날짜를 선택 시 해당 일자의 시간별 세부 이용내역을 확인할 수 있습니다.</p>
 					<div class="pagination">
 						<button type="button" class="btn__first">
 							<span class="blind">처음</span>
