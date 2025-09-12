@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="">
+	<meta property="og:title" content="">
+	<meta property="og:image" content="assets/images/img.png">
+	<meta property="og:image:width" content="1920">
+	<meta property="og:image:height" content="1080">
+	<meta property="og:description" content="AI 학습과 추론에 필수인 GPU! 지큐브에 무엇이든 물어보세요. NVIDIA GPU를 합리적인 가격으로 원할 때 사용 가능합니다.">
+	<meta property="og:site_name" content="지큐브">
+	<meta property="og:locale" content="en_US">
+	<title>지큐브</title> 
+	<link rel="shortcut icon" href="assets/favi/favicon.ico">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"/>
+	<link rel="stylesheet" type="text/css" href="assets/css/swiper.jquery.min.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/common.css" />
+	<script type="text/javascript" src="assets/js/jquery-3.6.0.min.js"></script>
+	<script  src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+	<script type="text/javascript" src="assets/js/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+	<script type="text/javascript" src="assets/js/common.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<!-- 공통헤더 -->
+		<div class="header">
+			<div class="inner">
+				<h1><a href="/"><span  class="blind">gcube</span></a></h1>
+				<a href="javascript:;" class="btn__nav"><span class="blind">모바일 GNB 열기</span></a>
+				<div class="gnb">
+					<div class="gnb__inner">
+						<div class="nav">
+							<div class="nav-top">
+								<div class="user--wrap">
+									<div class="user__name">
+										<strong>홍길동길동</strong>
+										<button type="button" class="btn__logout">로그아웃</button>
+										<div class="user__email">kildong@email.com</div>
+									</div>
+									<div class="btn--wrap">
+										<a href="javascript:;" class="mypage"><span>내 프로필</span></a>
+										<a href="javascript:;" class="storage"><span>저장소관리</span></a>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li class="home">
+									<a href="0-user-main.html" class="depth1"><span>Home</span></a>
+								</li>
+								<li class="deploy">
+									<a href="javascript:;" class="depth1 is-active"><span>Deploy the workload</span></a>
+									<ul class="depth2">
+										<li><a href="1-0-workload_list_type-card.html" class="is-active">워크로드 관리</a></li>
+										<li><a href="1-2-1-workload_expense.html">워크로드 지출내역</a></li>
+										<li><a href="1-3-workload_create.html">새 워크로드 생성</a></li>
+										<li><a href="1-4-1-workload_node_status.html">지정 노드 현황</a></li>
+									</ul> 
+								</li>
+								<li class="point">
+									<a href="javascript:;" class="depth1"><span>My Point</span></a>
+									<ul class="depth2">
+										<li><a href="">포인트 현황</a></li>
+										<li><a href="">포인트 충전</a></li>
+										<li><a href="">포인트 정산 / 환급</a></li>
+									</ul>
+								</li>
+								<li class="payment">
+									<a href="javascript:;" class="depth1"><span>Payment</span></a>
+								</li>
+								<li class="price">
+									<a href="javascript:;" class="depth1"><span>Price</span></a>
+								</li>
+								<li class="docs">
+									<a href="javascript:;" class="depth1"><span>Docs</span></a>
+								</li>
+							</ul>
+						</div>
+						<button type="button" class="btn__default btn__mode" onclick="window.location.href='0-provider-main.html'">Go Share Mode</button>
+					</div>
+				</div>
+				<div class="notification--wrap">
+					<span class="user">Honggildong@test.co.kr</span>
+					<button type="button" class="btn__noti">
+						<span class="blind">알림</span>
+						<strong>3</strong>
+					</button>
+					<div class="noti__content">
+						<dl class="noti__list--wrap">
+							<dt>
+								<strong>알림</strong>
+								<button type="button" class="btn__delete">삭제</button>
+							</dt>
+							<dd>
+								<ul class="noti__list">
+									<li>
+										<strong>Yh-ollama1 의 연결이 해제되었습니다.</strong>
+										<div class="date">12:53</div>
+									</li>
+									<!-- 읽은상태 class="on-read" -->
+									<li class="on-read">
+										<strong>Yh-ollama1 이 {XXXXXXX} 에 연결되었습니다.</strong>
+										<div class="date">11:19</div>
+									</li>
+									<!-- 공지사항 class="notice" -->
+									<li class="notice">
+										<strong>[공지] 사이트 정기 점검 일정을 안내합니다.</strong>
+										<button type="button" class="btn__default medium">상세내용 보기</button>
+										<div class="date">11:10</div>
+									</li>
+									<li class="notice on-read">
+										<strong>[안내] 에이전트 업데이트를 진행해주세요.</strong>
+										<div class="notice__detail">
+											에이전트 업데이트가 있습니다. 이전 에이전트는 3월 20일부터 사용이 불가하므로 반드시 업데이트해주세요.
+										</div>
+										<div class="date">2월 29일 09:00</div>
+									</li>
+									<li class="notice">
+										<strong>[공지] 사이트 약관 변경 안내</strong>
+										<button type="button" class="btn__default medium">상세내용 보기</button>
+										<div class="date">2월 28일 09:00</div>
+									</li>
+									<li>
+										<strong>Yh-ollama1 의 연결이 해제되었습니다.</strong>
+										<div class="date">12:53</div>
+									</li>
+								</ul>
+								<p class="noti__text">알림 내역은 최근 90일까지 보여지며 이전 내용은 삭제되어집니다.</p>
+							</dd>
+						</dl>
+					</div>
+				</div>
+			</div>		
+		</div>
+		<!-- //공통헤더 -->
+
+		<!-- 워크로드 모니터링 -->
+		<div class="container">
+			<div class="container__inner">
+				<div class="workload__list--wrap">
+					<div class="detail__title--wrap">
+						<button type="button" class="btn__prev-page"><span class="blind">이전으로</span></button>
+						<h3>워크로드 모니터링</h3>
+					</div>
+					<div class="monitor--wrap">
+						<div class="monitor__title">
+							<a href="1-1-1-user-workload_deatail.html" class="btn__title tcolor1">kuoslab-cyshin-test [#921]</a>
+							<div class="object__spec--wrap">
+								<dl class="object__spec">
+									<dt>목적스펙</dt>
+									<dd>Any</dd>
+								</dl>
+								<dl class="object__spec">
+									<dt>GPU</dt>
+									<dd>RTX4090</dd>
+								</dl>
+								<dl class="object__spec">
+									<dt>메모리</dt>
+									<dd>24GB</dd>
+								</dl>
+							</div>
+						</div>
+						<div class="monitor__item">
+							<div class="monitor__filter--wrap">
+								<dl>
+									<dt>시간 범위 선택</dt>
+									<dd>
+										<select name="">
+											<option value="">최근 8시간</option>
+											<option value="">30분</option>
+											<option value="">1시간</option>
+											<option value="">2시간</option>
+											<option value="">3시간</option>
+											<option value="">5시간</option>
+											<option value="">8시간</option>
+											<option value="">12시간</option>
+											<option value="">1일</option>
+											<option value="">2일</option>
+											<option value="">3일</option>
+											<option value="">7일</option>
+										</select>
+									</dd>
+								</dl>
+								<dl>
+									<dt>시작시간</dt>
+									<dd>
+										<div class="date-time__filter--wrap">
+											<input type="text" id="startDate" value="2025-02-07 12:12" class="datetimepicker" readonly  />
+										</div>
+									</dd>
+								</dl>
+								<dl>
+									<dt>시작시간</dt>
+									<dd>
+										<div class="date-time__filter--wrap">
+											<input type="text" id="endDate" value="2025-02-07 12:12" class="datetimepicker" readonly  />
+										</div>
+									</dd>
+								</dl>
+								<dl>
+									<dt>샘플링 관격</dt>
+									<dd>
+										<select name="">
+											<option value="">10분</option>
+											<option value="">1분</option>
+											<option value="">2분</option>
+											<option value="">3분</option>
+											<option value="">5분</option>
+											<option value="">10분</option>
+											<option value="">15분</option>
+											<option value="">1시간</option>
+											<option value="">2시간</option>
+											<option value="">3시간</option>
+											<option value="">5시간</option>
+										</select>
+										<button type="button" class="btn__default btn__calendar">조회</button>
+									</dd>
+								</dl>					
+								<script>
+									document.addEventListener('DOMContentLoaded', function() {
+										function getNow() {
+											var now = new Date();
+											var Y = now.getFullYear();
+											var m = ('0' + (now.getMonth() + 1)).slice(-2);
+											var d = ('0' + now.getDate()).slice(-2);
+											var H = ('0' + now.getHours()).slice(-2);
+											var i = ('0' + now.getMinutes()).slice(-2);
+											return Y + '-' + m + '-' + d + ' ' + H + ':' + i;
+										}
+										document.getElementById('startDate').value = getNow();
+										document.getElementById('endDate').value = getNow();
+									});
+									$(function(){
+											$('#startDate').datetimepicker({
+												format: 'Y-m-d H:i',
+												lang: 'ko',
+												onShow: function(ct){
+													this.setOptions({
+														maxDate: $('#endDate').val() ? $('#endDate').val() : false
+													})
+												}
+											});
+											$('#endDate').datetimepicker({
+												format: 'Y-m-d H:i',
+												lang: 'ko',
+												onShow: function(ct){
+													this.setOptions({
+														minDate: $('#startDate').val() ? $('#startDate').val() : false
+													})
+												}
+											});
+									})
+								</script>
+							</div>
+						</div>
+						<div class="monitor__item">
+							<ul class="pod__list">
+								<li>
+									<div class="pod__item">
+										<span class="pod__dot bgcolor1"></span>
+										<strong>dep870-7bd6fc7f5d-pt9dm</strong>
+									</div>
+								</li>
+								<li>
+									<div class="pod__item">
+										<span class="pod__dot bgcolor1"></span>
+										<strong>dep870-7bd6fc7f5d-pt9dm</strong>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- 그래프1 -->
+						<div class="monitor__item">
+							<dl class="monitor__chart--wrap">
+								<dt><strong>GPU 사용량(%)</strong></dt>
+								<dd>
+									<div id="lineChart1" class="monitor__chart--item"></div>
+								</dd>
+							</dl>
+						</div>
+						<!-- 그래프2 -->
+						<div class="monitor__item">
+							<dl class="monitor__chart--wrap">
+								<dt><strong>GPU 메모리 사용량(MB)</strong></dt>
+								<dd>
+									<div id="lineChart2" class="monitor__chart--item"></div>
+								</dd>
+							</dl>
+						</div>
+						<!-- 그래프3 -->
+						<div class="monitor__item">
+							<dl class="monitor__chart--wrap">
+								<dt><strong>CPU 사용량(%)</strong></dt>
+								<dd>
+									<div id="lineChart3" class="monitor__chart--item"></div>
+								</dd>
+							</dl>
+						</div>
+						<!-- 그래프4 -->
+						<div class="monitor__item">
+							<dl class="monitor__chart--wrap">
+								<dt><strong>메모리 사용량(MB)</strong></dt>
+								<dd>
+									<div id="lineChart4" class="monitor__chart--item"></div>
+								</dd>
+							</dl>
+						</div>
+						<!-- 그래프5 -->
+						<div class="monitor__item">
+							<dl class="monitor__chart--wrap">
+								<dt><strong>네트워크 받은 패킷 (Kbps)</strong></dt>
+								<dd>
+									<div id="lineChart5" class="monitor__chart--item"></div>
+								</dd>
+							</dl>
+						</div>
+						<!-- 그래프6 -->
+						<div class="monitor__item">
+							<dl class="monitor__chart--wrap">
+								<dt><strong>네트워크 보낸 패킷 (Kbps)</strong> </dt>
+								<dd>
+									<div id="lineChart6" class="monitor__chart--item"></div>
+								</dd>
+							</dl>
+						</div>
+						<script>
+							function getStrokeWidth() {
+								return window.innerWidth <= 750 ? 1 : 3;
+							}
+							function getChartHeight() {
+								return window.innerWidth <= 750 ? 220 : 400;
+							}
+							const baseOptions = {
+								chart: {
+									height: getChartHeight(),
+									type: 'area',
+									zoom: { enabled: true }
+								},
+								dataLabels: { enabled: false },
+								stroke: {
+									curve: 'smooth',
+									width: getStrokeWidth()
+								},
+								colors: ['#8247FF'],
+								fill: {
+									opacity: 0.9,
+									type: 'gradient',
+									gradient: {
+										shade: 'light',
+										type: 'vertical',
+										shadeIntensity: 0.5,
+										gradientToColors: ['#B399FF'],
+										inverseColors: false,
+										opacityFrom: 1,
+										opacityTo: 0,
+										stops: [0, 100],
+										colorStops: []
+									}
+								},
+								grid: {
+									borderColor: '#f1f1f4',
+									strokeDashArray: 3
+								},
+								xaxis: {
+									type: 'datetime',
+									labels: {
+										datetimeUTC: false,
+										style: { colors: '#99A1B7' }
+									}
+								},
+								yaxis: {
+									labels: {
+										style: { colors: '#99A1B7' }
+									}
+								},
+								tooltip: {
+									x: { format: 'yyyy-MM-dd HH:mm:ss' }
+								}
+							};
+
+							const chartData = [
+								{
+									id: 'lineChart1',
+									name: 'gpu',
+									data: [
+										[new Date('2025-02-08T00:00:00').getTime(), 42.22],
+										[new Date('2025-02-09T00:00:00').getTime(), 0],
+										[new Date('2025-02-10T00:00:00').getTime(), 0],
+										[new Date('2025-02-11T00:00:00').getTime(), 75.08],
+										[new Date('2025-02-12T00:00:00').getTime(), 0],
+										[new Date('2025-02-13T00:00:00').getTime(), 35.05],
+										[new Date('2025-02-14T00:00:00').getTime(), 10]
+									]
+								},
+								{
+									id: 'lineChart2',
+									name: 'gpu 메모리',
+									data: [
+										[new Date('2025-02-08T00:00:00').getTime(), 0],
+										[new Date('2025-02-09T00:00:00').getTime(), 85.22],
+										[new Date('2025-02-10T00:00:00').getTime(), 0],
+										[new Date('2025-02-11T00:00:00').getTime(), 75.08],
+										[new Date('2025-02-12T00:00:00').getTime(), 0],
+										[new Date('2025-02-13T00:00:00').getTime(), 35.05],
+										[new Date('2025-02-14T00:00:00').getTime(), 20]
+									]
+								},
+								{
+									id: 'lineChart3',
+									name: 'cpu',
+									data: [
+										[new Date('2025-02-08T00:00:00').getTime(), 0],
+										[new Date('2025-02-09T00:00:00').getTime(), 85.22],
+										[new Date('2025-02-10T00:00:00').getTime(), 0],
+										[new Date('2025-02-11T00:00:00').getTime(), 75.08],
+										[new Date('2025-02-12T00:00:00').getTime(), 0],
+										[new Date('2025-02-13T00:00:00').getTime(), 35.05],
+										[new Date('2025-02-14T00:00:00').getTime(), 20]
+									]
+								},
+								{
+									id: 'lineChart4',
+									name: '메모리',
+									data: [
+										[new Date('2025-02-08T00:00:00').getTime(), 0],
+										[new Date('2025-02-09T00:00:00').getTime(), 85.22],
+										[new Date('2025-02-10T00:00:00').getTime(), 0],
+										[new Date('2025-02-11T00:00:00').getTime(), 75.08],
+										[new Date('2025-02-12T00:00:00').getTime(), 0],
+										[new Date('2025-02-13T00:00:00').getTime(), 35.05],
+										[new Date('2025-02-14T00:00:00').getTime(), 20]
+									]
+								},
+								{
+									id: 'lineChart5',
+									name: '네트워크 받은 패킷',
+									data: [
+										[new Date('2025-02-08T00:00:00').getTime(), 0],
+										[new Date('2025-02-09T00:00:00').getTime(), 85.22],
+										[new Date('2025-02-10T00:00:00').getTime(), 0],
+										[new Date('2025-02-11T00:00:00').getTime(), 75.08],
+										[new Date('2025-02-12T00:00:00').getTime(), 0],
+										[new Date('2025-02-13T00:00:00').getTime(), 35.05],
+										[new Date('2025-02-14T00:00:00').getTime(), 20]
+									]
+								},
+								{
+									id: 'lineChart6',
+									name: '네트워크 보낸 패킷',
+									data: [
+										[new Date('2025-02-08T00:00:00').getTime(), 0],
+										[new Date('2025-02-09T00:00:00').getTime(), 85.22],
+										[new Date('2025-02-10T00:00:00').getTime(), 0],
+										[new Date('2025-02-11T00:00:00').getTime(), 75.08],
+										[new Date('2025-02-12T00:00:00').getTime(), 0],
+										[new Date('2025-02-13T00:00:00').getTime(), 35.05],
+										[new Date('2025-02-14T00:00:00').getTime(), 20]
+									]
+								}
+							];
+							const charts = [];
+							function createChart({id, name, data}) {
+								const options = JSON.parse(JSON.stringify(baseOptions));
+								options.series = [{ name, data }];
+								options.chart.height = getChartHeight();
+								const chart = new ApexCharts(document.querySelector(`#${id}`), options);
+								chart.render();
+								return chart;
+							}
+							document.addEventListener("DOMContentLoaded", () => {
+								chartData.forEach(c => {
+									charts.push(createChart(c));
+								});
+								window.addEventListener('resize', () => {
+									const newHeight = getChartHeight();
+									charts.forEach(chart => {
+										chart.updateOptions({
+											chart: {
+												height: newHeight
+											}
+										});
+									});
+								});
+							});
+						</script>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 공통dim -->
+		<div class="dim"></div>
+	</div>
+</body>
+</html>

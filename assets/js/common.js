@@ -1,43 +1,31 @@
 document.addEventListener("DOMContentLoaded", function () {
   // 모달열기
   function modalOpen(obj) {
-    var pops = obj.getAttribute("data-link");
-    var popup = document.querySelector(pops);
+    var selector = obj.getAttribute("data-link");
+    var popup = document.querySelector(selector);
 		if (!popup) return;
 		document.documentElement.classList.add("is-opened");
-    if (popup.classList.contains("filter-layer")) {
-			popup.style.display = "block";
-			popup.style.transform = "translateY(100%)"; 
+    popup.style.display = "block";
+		popup.style.opacity = 0;
+		void popup.offsetWidth;
+		setTimeout(function () {
+			popup.style.transition = "opacity 0.5s ease";
 			popup.style.opacity = 1;
-			setTimeout(function () {
-				popup.style.transform = "translateY(0)";
-			}, 10);
-		} else {
-			popup.style.display = "block";
-			popup.style.opacity = 0;
-			setTimeout(function () {
-				popup.style.opacity = 1;
-			}, 0);
-		}
+		}, 10);
   }
 	window.modalOpen = modalOpen;
 
   // 모달닫기
 	function modalClose(obj) {
-		var popup = obj.closest(".modal__container, .filter-layer");
+		var popup = obj.closest(".modal__container");
 		if (!popup) return;
-		if (popup.classList.contains("filter-layer")) {
-			popup.style.transform = "translateY(100%)";
-			setTimeout(function () {
-				popup.style.display = "none";
-			}, 300);
-		} else {
-			popup.style.opacity = 0;
-			setTimeout(function () {
-				popup.style.display = "none";
-				popup.style.opacity = "";
-			}, 500);
-		}
+		popup.style.transition = "opacity 0.5s ease";
+		popup.style.opacity = 0;
+		setTimeout(function () {
+			popup.style.display = "none";
+			popup.style.transition = "";
+			popup.style.opacity = "";
+		}, 500);
 		document.documentElement.classList.remove("is-opened");
 	}
 	window.modalClose = modalClose;
@@ -282,7 +270,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	}
 	setupEvents();
-	// 화면 크기 변경시 이벤트 다시 설정
 	window.addEventListener('resize', () => {
 		setupEvents();
 	});

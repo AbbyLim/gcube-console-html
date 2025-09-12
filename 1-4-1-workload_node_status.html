@@ -58,10 +58,10 @@
 								<li class="deploy">
 									<a href="javascript:;" class="depth1 is-active"><span>Deploy the workload</span></a>
 									<ul class="depth2">
-										<li><a href="1-0-workload_list_type-card.html" class="is-active">워크로드 관리</a></li>
+										<li><a href="1-0-workload_list_type-card.html">워크로드 관리</a></li>
 										<li><a href="1-2-1-workload_expense.html">워크로드 지출내역</a></li>
 										<li><a href="1-3-workload_create.html">새 워크로드 생성</a></li>
-										<li><a href="1-4-1-workload_node_status.html">지정 노드 현황</a></li>
+										<li><a href="1-4-1-workload_node_status.html" class="is-active">지정 노드 현황</a></li>
 									</ul> 
 								</li>
 								<li class="point">
@@ -141,104 +141,94 @@
 		</div>
 		<!-- //공통헤더 -->
 
-		<!-- 워크로드 이용상세 -->
+		<!-- 지정 노드 현황 -->
 		<div class="container">
 			<div class="container__inner">
 				<div class="workload__list--wrap">
 					<div class="detail__title--wrap">
-						<button type="button" class="btn__prev-page"><span class="blind">이전으로</span></button>
-						<h3>이용상세  -  #888 [<span class="tcolor4">RTX4090</span>]</h3>
-						<div class="status--wrap">
-							<select name="">
-								<option value="">2025년</option>
-								<option value="">2024년</option>
-								<option value="">2023년</option>
-							</select>
-							<select name="">
-								<option value="">03월</option>
-								<option value="">02월</option>
-								<option value="">01월</option>
-							</select>
-						</div>
+						<h3>지정 노드 현황</h3> 
 					</div>
-					<div class="type-flex--wrap">
+					<p class="noti__text">※ 각 날짜를 선택 시 해당 일자의 시간별 세부 이용내역을 확인할 수 있습니다.</p>
+					<div class="type-flex--wrap scrollable"><!-- mo에서 가로스크롤 class="scrollable" -->
 						<div class="type-flex--wrap__inner">
 							<div class="type-flex flex-title">
-								<div class="flex-child w-all mo-w80">날짜</div>
-								<div class="flex-child w-all mo-w80">포인트</div>
-								<div class="flex-child w-all">금액</div>
-								<div class="flex-child w-all mo-w80">기본금액</div>
-								<div class="flex-child w-all">이용금액</div>
-								<div class="flex-child w-all pc-only">GPU모델</div> 
-								<div class="flex-child w-all pc-only">GPU이용율</div>
-								<div class="flex-child w-all pc-only">네트워크 이용량</div>
-								<div class="flex-child w-all pc-only">세부내역</div>
+								<div class="flex-child w60 mo-w40">NO</div>
+								<div class="flex-child w150 mo-w-all">노드명</div>
+								<div class="flex-child w160 mo-w-all">GPU모델명</div>
+								<div class="flex-child w-all mo-w80">GPU 메모리</div>
+								<div class="flex-child w-all mo-w80">그래픽드라이버</div>
+								<div class="flex-child w-all mo-w80">CUDA Toolkit</div>
+								<div class="flex-child w180 mo-w-all">장치정보</div>
+								<div class="flex-child w-all mo-w50">실행상태</div> 
+								<div class="flex-child w-all">연결상태</div>
+								<div class="flex-child w150 pc-only">상태이력</div>
 							</div>
 							<div class="type-flex-body">
 								<ul>
-									<li>
+									 <li>
 										<div class="type-flex flex-content">
-											<div class="flex-child w-all mo-w80"><a href="1-1-2-user-workload_deatail_sub.html" class="no-deco">2025-02-13</a></div>
-											<div class="flex-child w-all mo-w80"><span class="tcolor3">-1,314.78P</span></div>
-											<div class="flex-child w-all">1,884원</div>
-											<div class="flex-child w-all mo-w80">1,111,884원</div>
-											<div class="flex-child w-all">123원</div>
-											<div class="flex-child w-all pc-only">RTX4090</div>
-											<div class="flex-child w-all pc-only">100%</div>
-											<div class="flex-child w-all pc-only">180.63KB</div>
-											<div class="flex-child w-all pc-only">
-												<button type="button" class="btn__default btn__detail2" onclick="window.location.href='1-1-2-user-workload_deatail_sub.html'"><span>세부내역</span></button>
+											<div class="flex-child w60 mo-w40">1</div>
+											<div class="flex-child w150 mo-w-all"><a href="">wn9d365894</a></div>
+											<div class="flex-child w160 mo-w-all">RTX3060 X 1</div>
+											<div class="flex-child w-all mo-w80">12GB</div>
+											<div class="flex-child w-all mo-w80">536.23</div>
+											<div class="flex-child w-all mo-w80">12.2.0</div>
+											<div class="flex-child w180 mo-w-all ag-left flex-d-column">
+												<dl class="node-info__spec pdlr20">
+													<dt>CPU</dt>
+													<dd>12Core</dd>
+												</dl>
+												<dl class="node-info__spec pdlr20">
+													<dt>RAM</dt>
+													<dd>20GB</dd>
+												</dl>
+												<dl class="node-info__spec pdlr20">
+													<dt>Storage</dt>
+													<dd>46GB</dd>
+												</dl>
+											</div>
+											<div class="flex-child w-all mo-w50"><span>실행중</span></div>
+											<div class="flex-child w-all">연결<br />[Yh-ollama1]</div>
+											<div class="flex-child w150 pc-only">
+												<button type="button" class="btn__default btn__detail2"><span>이력보기</span></button>
 											</div>
 										</div>
 									</li>
 									<!-- 단순 반복 -->
 									<li>
 										<div class="type-flex flex-content">
-											<div class="flex-child w-all mo-w80"><a href="1-1-2-user-workload_deatail_sub.html" class="no-deco">2025-02-13</a></div>
-											<div class="flex-child w-all mo-w80"><span class="tcolor3">-1,314.78P</span></div>
-											<div class="flex-child w-all">1,884원</div>
-											<div class="flex-child w-all mo-w80">1,111,884원</div>
-											<div class="flex-child w-all">123원</div>
-											<div class="flex-child w-all pc-only">RTX4090</div>
-											<div class="flex-child w-all pc-only">100%</div>
-											<div class="flex-child w-all pc-only">180.63KB</div>
-											<div class="flex-child w-all pc-only">
-												<button type="button" class="btn__default btn__detail2" onclick="window.location.href='1-1-2-user-workload_deatail_sub.html'"><span>세부내역</span></button>
+											<div class="flex-child w60 mo-w40">1</div>
+											<div class="flex-child w150 mo-w-all"><a href="">wn9d365894</a></div>
+											<div class="flex-child w160 mo-w-all">RTX3060 X 1</div>
+											<div class="flex-child w-all mo-w80">12GB</div>
+											<div class="flex-child w-all mo-w80">536.23</div>
+											<div class="flex-child w-all mo-w80">12.2.0</div>
+											<div class="flex-child w180 mo-w-all ag-left flex-d-column">
+												<dl class="node-info__spec pdlr20">
+													<dt>CPU</dt>
+													<dd>12Core</dd>
+												</dl>
+												<dl class="node-info__spec pdlr20">
+													<dt>RAM</dt>
+													<dd>20GB</dd>
+												</dl>
+												<dl class="node-info__spec pdlr20">
+													<dt>Storage</dt>
+													<dd>46GB</dd>
+												</dl>
 											</div>
-										</div>
-									</li>
-									<li>
-										<div class="type-flex flex-content">
-											<div class="flex-child w-all mo-w80"><a href="1-1-2-user-workload_deatail_sub.html" class="no-deco">2025-02-13</a></div>
-											<div class="flex-child w-all mo-w80"><span class="tcolor3">-1,314.78P</span></div>
-											<div class="flex-child w-all">1,884원</div>
-											<div class="flex-child w-all mo-w80">1,111,884원</div>
-											<div class="flex-child w-all">123원</div>
-											<div class="flex-child w-all pc-only">RTX4090</div>
-											<div class="flex-child w-all pc-only">100%</div>
-											<div class="flex-child w-all pc-only">180.63KB</div>
-											<div class="flex-child w-all pc-only">
-												<button type="button" class="btn__default btn__detail2" onclick="window.location.href='1-1-2-user-workload_deatail_sub.html'"><span>세부내역</span></button>
+											<div class="flex-child w-all mo-w50"><span class="tcolor3">종료</span></div>
+											<div class="flex-child w-all">연결<br />[Yh-ollama1]</div>
+											<div class="flex-child w150 pc-only">
+												<button type="button" class="btn__default btn__detail2"><span>이력보기</span></button>
 											</div>
 										</div>
 									</li>
 								</ul>
 							</div>
-							<!-- 합계 -->
-							<div class="type-flex flex-foot ">
-								<div class="flex-child w-all mo-w80">합계</div>
-								<div class="flex-child w-all mo-w80"><span class="tcolor3">-1,314.78P</span></div>
-								<div class="flex-child w-all">1,884원</div>
-								<div class="flex-child w-all mo-w80">1,111,884원</div>
-								<div class="flex-child w-all">123원</div>
-								<div class="flex-child w-all pc-only"></div> 
-								<div class="flex-child w-all pc-only"></div>
-								<div class="flex-child w-all pc-only"></div>
-								<div class="flex-child w-all pc-only"></div>
-							</div>
 						</div>
 					</div>
-					<p class="noti__text">※ 각 날짜를 선택 시 해당 일자의 시간별 세부 이용내역을 확인할 수 있습니다.</p>
+					 
 					<div class="pagination">
 						<button type="button" class="btn__first">
 							<span class="blind">처음</span>
