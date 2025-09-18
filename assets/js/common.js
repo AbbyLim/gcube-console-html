@@ -55,102 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-	// 탭
-	const tabWraps = document.querySelectorAll(".tab--wrap");
-	tabWraps.forEach(tabWrap => {
-		const isAccordion = tabWrap.classList.contains("accordion");
-		const isFaq = tabWrap.classList.contains("faq--wrap");
-		const tabTitles = tabWrap.querySelectorAll(".tab__title");
-		tabTitles.forEach(title => {
-			title.addEventListener("click", () => {
-				const windowWidth = window.innerWidth;
-				if ((isAccordion && windowWidth < 1881) || isFaq) {
-					if (title.classList.contains("is-active")) {
-						title.classList.remove("is-active");
-						return;
-					}
-				}
-				tabTitles.forEach(t => t.classList.remove("is-active"));
-				title.classList.add("is-active");
-			});
-		});
-		function resetActiveOnPc() {
-			const windowWidth = window.innerWidth;
-			if (windowWidth >= 1881) {
-				const activeTitle = tabWrap.querySelector(".tab__title.is-active");
-				if (!activeTitle && tabTitles.length > 0) {
-					tabTitles[0].classList.add("is-active");
-				}
-			}
-		}
-		resetActiveOnPc();
-		window.addEventListener("resize", resetActiveOnPc);
-	});
-
-	//디자인 셀렉트기능
-	document.querySelectorAll(".option-select").forEach(selectBox => {
-		const input = selectBox.querySelector("input.input__txt");
-		const optionLayer = selectBox.querySelector(".option--layer");
-		const closeBtn = optionLayer.querySelector(".btn__close");
-		const radios = optionLayer.querySelectorAll("input[type=\"radio\"]");
-		function updateOptionSelectMode() {
-			if (window.innerWidth <= 750) {
-				selectBox.classList.remove("is-active");
-				optionLayer.style.display = "block";
-			} else {
-				selectBox.classList.remove("is-active");
-				optionLayer.style.display = "";
-			}
-		}
-		input.addEventListener("click", function () {
-			selectBox.classList.toggle("is-active");
-			if (window.innerWidth <= 750) {
-				document.documentElement.classList.add("is-opened");
-			}
-		});
-		radios.forEach(radio => {
-			radio.addEventListener("change", function () {
-				input.value = this.value;
-				selectBox.classList.remove("is-active");
-				if (window.innerWidth <= 750) {
-					document.documentElement.classList.remove("is-opened");
-				}
-			});
-		});
-		document.addEventListener("click", function (e) {
-			if (!selectBox.contains(e.target)) {
-				selectBox.classList.remove("is-active");
-				if (window.innerWidth <= 750) {
-					document.documentElement.classList.remove("is-opened");
-				}
-			}
-		});
-		closeBtn.addEventListener("click", () => {
-			selectBox.classList.remove("is-active");
-			document.documentElement.classList.remove("is-opened");
-		});
-		updateOptionSelectMode();
-		window.addEventListener("resize", updateOptionSelectMode);
-	});
-
-	function resetFilterLayerStyle() {
-		const filterLayers = document.querySelectorAll(".filter-layer");
-		const optionSelects = document.querySelectorAll(".option-select");
-		const windowWidth = window.innerWidth;
-		if (windowWidth > 750) {
-			filterLayers.forEach(layer => {
-				layer.style.display = "";
-				layer.style.transform = "";
-				layer.style.opacity = "";
-			});
-			optionSelects.forEach(selectBox => {
-				selectBox.classList.remove("is-active");
-			});
-		}
-	}
-	resetFilterLayerStyle();
-	window.addEventListener("resize", resetFilterLayerStyle);
-
 	// 반응형
 	window.isPC = window.isPC || function() {
 		return window.innerWidth >= 750;
@@ -183,7 +87,11 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 		document.querySelectorAll('.btn__tooltip').forEach(function(btn) {
 			const tooltipWrap = btn.closest('.tooltip--wrap');
-			if (window.isPC()) {
+			if (btn.classList.contains('btn__option')) {
+				btn.addEventListener('click', onTooltipClick);
+				tooltipWrap.removeEventListener('mouseenter', onTooltipMouseEnter);
+				tooltipWrap.removeEventListener('mouseleave', onTooltipMouseLeave);
+			} else if (window.isPC()) {
 				tooltipWrap.addEventListener('mouseenter', onTooltipMouseEnter);
 				tooltipWrap.addEventListener('mouseleave', onTooltipMouseLeave);
 				btn.removeEventListener('click', onTooltipClick);
@@ -196,7 +104,17 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 	function onTooltipClick(e) {
 		e.stopPropagation();
-		this.classList.toggle('is-active');
+		if (this.classList.contains('btn__option')) {
+			const isActive = this.classList.contains('is-active');
+			document.querySelectorAll('.btn__option.is-active').forEach(function(activeBtn) {
+				activeBtn.classList.remove('is-active');
+			});
+			if (!isActive) {
+				this.classList.add('is-active');
+			}
+		} else {
+			this.classList.toggle('is-active');
+		}
 	}
 	function onTooltipMouseEnter(e) {
 		const btn = this.querySelector('.btn__tooltip');

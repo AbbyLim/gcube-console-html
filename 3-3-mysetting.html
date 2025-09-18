@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="">
+	<meta property="og:title" content="">
+	<meta property="og:image" content="assets/images/img.png">
+	<meta property="og:image:width" content="1920">
+	<meta property="og:image:height" content="1080">
+	<meta property="og:description" content="AI 학습과 추론에 필수인 GPU! 지큐브에 무엇이든 물어보세요. NVIDIA GPU를 합리적인 가격으로 원할 때 사용 가능합니다.">
+	<meta property="og:site_name" content="지큐브">
+	<meta property="og:locale" content="en_US">
+	<title>지큐브</title> 
+	<link rel="shortcut icon" href="assets/favi/favicon.ico">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"/>
+	<link rel="stylesheet" type="text/css" href="assets/css/swiper.jquery.min.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/common.css" />
+	<script type="text/javascript" src="assets/js/jquery-3.6.0.min.js"></script>
+	<script  src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+	<script type="text/javascript" src="assets/js/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+	<script type="text/javascript" src="assets/js/common.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<!-- 공통헤더 -->
+		<div class="header">
+			<div class="inner">
+				<h1><a href="/"><span  class="blind">gcube</span></a></h1>
+				<a href="javascript:;" class="btn__nav"><span class="blind">모바일 GNB 열기</span></a>
+				<div class="gnb">
+					<div class="gnb__inner">
+						<div class="nav">
+							<div class="nav-top">
+								<div class="user--wrap">
+									<div class="user__name">
+										<strong>홍길동길동</strong>
+										<button type="button" class="btn__logout">로그아웃</button>
+										<div class="user__email">kildong@email.com</div>
+									</div>
+									<div class="btn--wrap">
+										<a href="javascript:;" class="mypage"><span>내 프로필</span></a>
+										<a href="javascript:;" class="storage"><span>저장소관리</span></a>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li class="home">
+									<a href="0-user-main.html" class="depth1"><span>Home</span></a>
+								</li>
+								<li class="deploy">
+									<a href="javascript:;" class="depth1"><span>Deploy the workload</span></a>
+									<ul class="depth2">
+										<li><a href="1-0-workload_list_type-card.html">워크로드 관리</a></li>
+										<li><a href="1-2-1-workload_expense.html">워크로드 지출내역</a></li>
+										<li><a href="1-3-workload_create.html">새 워크로드 생성</a></li>
+										<li><a href="1-4-1-workload_node_status.html">지정 노드 현황</a></li>
+									</ul> 
+								</li>
+								<li class="point">
+									<a href="javascript:;" class="depth1"><span>My Point</span></a>
+									<ul class="depth2">
+										<li><a href="">포인트 현황</a></li>
+										<li><a href="">포인트 충전</a></li>
+										<li><a href="">포인트 정산 / 환급</a></li>
+									</ul>
+								</li>
+								<li class="payment">
+									<a href="javascript:;" class="depth1"><span>Payment</span></a>
+								</li>
+								<li class="price">
+									<a href="javascript:;" class="depth1"><span>Price</span></a>
+								</li>
+								<li class="docs">
+									<a href="javascript:;" class="depth1"><span>Docs</span></a>
+								</li>
+							</ul>
+						</div>
+						<button type="button" class="btn__default btn__mode" onclick="window.location.href='0-provider-main.html'">Go Share Mode</button>
+					</div>
+				</div>
+				<div class="notification--wrap">
+					<span class="user">Honggildong@test.co.kr</span>
+					<button type="button" class="btn__noti">
+						<span class="blind">알림</span>
+						<strong>3</strong>
+					</button>
+					<div class="noti__content">
+						<dl class="noti__list--wrap">
+							<dt>
+								<strong>알림</strong>
+								<button type="button" class="btn__delete">삭제</button>
+							</dt>
+							<dd>
+								<ul class="noti__list">
+									<li>
+										<strong>Yh-ollama1 의 연결이 해제되었습니다.</strong>
+										<div class="date">12:53</div>
+									</li>
+									<!-- 읽은상태 class="on-read" -->
+									<li class="on-read">
+										<strong>Yh-ollama1 이 {XXXXXXX} 에 연결되었습니다.</strong>
+										<div class="date">11:19</div>
+									</li>
+									<!-- 공지사항 class="notice" -->
+									<li class="notice">
+										<strong>[공지] 사이트 정기 점검 일정을 안내합니다.</strong>
+										<button type="button" class="btn__default medium">상세내용 보기</button>
+										<div class="date">11:10</div>
+									</li>
+									<li class="notice on-read">
+										<strong>[안내] 에이전트 업데이트를 진행해주세요.</strong>
+										<div class="notice__detail">
+											에이전트 업데이트가 있습니다. 이전 에이전트는 3월 20일부터 사용이 불가하므로 반드시 업데이트해주세요.
+										</div>
+										<div class="date">2월 29일 09:00</div>
+									</li>
+									<li class="notice">
+										<strong>[공지] 사이트 약관 변경 안내</strong>
+										<button type="button" class="btn__default medium">상세내용 보기</button>
+										<div class="date">2월 28일 09:00</div>
+									</li>
+									<li>
+										<strong>Yh-ollama1 의 연결이 해제되었습니다.</strong>
+										<div class="date">12:53</div>
+									</li>
+								</ul>
+								<p class="noti__text">알림 내역은 최근 90일까지 보여지며 이전 내용은 삭제되어집니다.</p>
+							</dd>
+						</dl>
+					</div>
+				</div>
+			</div>		
+		</div>
+		<!-- //공통헤더 -->
+
+		<!-- 마이페이지 -->
+		<div class="container">
+			<div class="container__inner">
+				<div class="mypage--wrap">
+					<ul class="mypage__tab">
+						<li><a href="3-1-myprofile.html">내 프로필</a></li>
+						<li><a href="3-2-mystorage.html">저장소 관리</a></li>
+						<li><a href="javascript:;" class="is-active">기본 설정</a></li>
+					</ul>
+					<div class="workload-index__item">
+						<h3>알림 설정</h3>
+						<div class="setting--wrap type--edit">
+							<dl>
+								<dt>알림 설정</dt>
+								<dd>
+									<ul class="inline__list">
+										<li>
+											<label class="radio__type">
+												<input type="radio" name="default_alarm" checked />
+												<span>ON</span>
+											</label>
+										</li>
+										<li>
+											<label class="radio__type">
+												<input type="radio" name="default_alarm" />
+												<span>OFF</span>
+											</label>
+										</li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt><div class="time__title">알림 허용 시간</div></dt>
+								<dd>
+									<div class="timepicker--wrap">
+										<input type="text" class="ip__time" id="startTime" placeholder="00:00" /> - <input type="text" class="ip__time" id="endTime" placeholder="24:00" />
+										<script>
+											$('#startTime').datetimepicker({
+												datepicker: false,
+												format: 'H:i',
+												lang: 'ko'
+											});
+
+											$('#endTime').datetimepicker({
+												datepicker: false,
+												format: 'H:i',
+												lang: 'ko'
+											});
+										</script>
+									</div>
+								</dd>
+							</dl>
+							<dl>
+								<dt>알림 채널</dt>
+								<dd>
+									<ul class="block__list">
+										<li>
+											<label class="checkbox__type">
+												<input type="checkbox" name="default_channel" checked />
+												<span>홈페이지</span>
+											</label>
+										</li>
+										<li>
+											<label class="checkbox__type">
+												<input type="checkbox" name="default_channel" />
+												<span>이메일</span>
+											</label>
+										</li>
+										<li>
+											<label class="checkbox__type">
+												<input type="checkbox" name="default_channel" />
+												<span>카카오톡</span>
+											</label>
+										</li>
+										<li>
+											<label class="checkbox__type">
+												<input type="checkbox" name="default_channel" />
+												<span>텔레그램</span>
+											</label>
+										</li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt>알림 항목</dt>
+								<dd>
+									<ul class="block__list">
+										<li>
+											<label class="checkbox__type">
+												<input type="checkbox" name="default_item" checked />
+												<span>gcube 공지</span>
+											</label>
+										</li>
+										<li>
+											<label class="checkbox__type">
+												<input type="checkbox" name="default_item" />
+												<span>gcube 이벤트/마케팅</span>
+											</label>
+										</li>
+										<li>
+											<label class="checkbox__type">
+												<input type="checkbox" name="default_item" />
+												<span>워크로드/노드 운영 알림</span>
+											</label>
+										</li>
+										<li>
+											<label class="checkbox__type">
+												<input type="checkbox" name="default_item" />
+												<span>긴급 장애 공지</span>
+											</label>
+										</li>
+									</ul>
+								</dd>
+							</dl>
+						</div>
+					</div>
+					<div class="workload-index__item">
+						<h3>정산 설정</h3>
+						<div class="setting--wrap type--edit">
+							<dl>
+								<dt>정산 방식</dt>
+								<dd>
+									<ul class="inline__list">
+										<li>
+											<label class="radio__type">
+												<input type="radio" name="cal_type" />
+												<span>수동</span>
+											</label>
+										</li>
+										<li>
+											<label class="radio__type">
+												<input type="radio" name="cal_type" checked />
+												<span>자동</span>
+											</label>
+										</li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt>정산 대상 유형</dt>
+								<dd>
+									<ul class="inline__list">
+										<li>
+											<label class="radio__type">
+												<input type="radio" name="business_type" checked />
+												<span>개인사업자</span>
+											</label>
+										</li>
+										<li>
+											<label class="radio__type">
+												<input type="radio" name="business_type" />
+												<span>법인사업자</span>
+											</label>
+										</li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt>정산 주기</dt>
+								<dd>
+									<ul class="inline__list">
+										<li>
+											<label class="checkbox__type">
+												<input type="checkbox" name="default_cycle" checked />
+												<span>주별</span>
+											</label>
+										</li>
+										<li>
+											<label class="checkbox__type">
+												<input type="checkbox" name="default_cycle" />
+												<span>월별</span>
+											</label>
+										</li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt>입금 계좌</dt>
+								<dd>
+									<button type="button" class="btn__default btn__account" onclick="alert('계좌인증하기')">계좌인증</button>
+								</dd>
+							</dl>
+							<dl>
+								<dt>대금지급일자</dt>
+								<dd>
+									<ul class="inline__list">
+										<li>
+											<label class="checkbox__type">
+												<input type="checkbox" name="default_payment" checked />
+												<span>10일</span>
+											</label>
+										</li>
+										<li>
+											<label class="checkbox__type">
+												<input type="checkbox" name="default_payment" />
+												<span>25일</span>
+											</label>
+										</li>
+										<li>
+											<label class="checkbox__type">
+												<input type="checkbox" name="default_payment" />
+												<span>31일</span>
+											</label>
+										</li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt>최소정산금액</dt>
+								<dd>
+									<div class="ip__text--wrap">
+										<input type="text" class="ip__text" value="5,000" placeholder="10,000" />
+										<span class="won">원</span>
+									</div>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 공통dim -->
+		<div class="dim"></div>
+	</div>
+</body>
+</html>

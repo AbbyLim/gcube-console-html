@@ -201,7 +201,7 @@
 									</dd>
 								</dl>
 								<dl>
-									<dt>시작시간</dt>
+									<dt>종료시간</dt>
 									<dd>
 										<div class="date-time__filter--wrap">
 											<input type="text" id="endDate" value="2025-02-07 12:12" class="datetimepicker" readonly  />
@@ -216,7 +216,7 @@
 											<option value="">1분</option>
 											<option value="">2분</option>
 											<option value="">3분</option>
-											<option value="">5분</option>
+											<option value="">5분</option> 
 											<option value="">10분</option>
 											<option value="">15분</option>
 											<option value="">1시간</option>
@@ -248,7 +248,8 @@
 												onShow: function(ct){
 													this.setOptions({
 														maxDate: $('#endDate').val() ? $('#endDate').val() : false
-													})
+													});
+													$('.xdsoft_datetimepicker').addClass('calendar__custom');
 												}
 											});
 											$('#endDate').datetimepicker({
@@ -257,7 +258,8 @@
 												onShow: function(ct){
 													this.setOptions({
 														minDate: $('#startDate').val() ? $('#startDate').val() : false
-													})
+													});
+													$('.xdsoft_datetimepicker').addClass('calendar__custom');
 												}
 											});
 									})
