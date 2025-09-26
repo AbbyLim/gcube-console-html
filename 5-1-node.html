@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="">
+	<meta property="og:title" content="">
+	<meta property="og:image" content="assets/images/img.png">
+	<meta property="og:image:width" content="1920">
+	<meta property="og:image:height" content="1080">
+	<meta property="og:description" content="AI 학습과 추론에 필수인 GPU! 지큐브에 무엇이든 물어보세요. NVIDIA GPU를 합리적인 가격으로 원할 때 사용 가능합니다.">
+	<meta property="og:site_name" content="지큐브">
+	<meta property="og:locale" content="en_US">
+	<title>지큐브</title> 
+	<link rel="shortcut icon" href="assets/favi/favicon.ico">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/swiper.jquery.min.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/common.css" />
+	<script type="text/javascript" src="assets/js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="assets/js/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+	<script type="text/javascript" src="assets/js/common.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<!-- 공통헤더 -->
+		<div class="header">
+			<div class="inner">
+				<h1><a href="/"><span  class="blind">gcube</span></a></h1>
+				<a href="javascript:;" class="btn__nav"><span class="blind">모바일 GNB 열기</span></a>
+				<div class="gnb">
+					<div class="gnb__inner">
+						<div class="nav">
+							<div class="nav-top">
+								<div class="user--wrap">
+									<div class="user__name">
+										<strong>홍길동길동</strong>
+										<button type="button" class="btn__logout">로그아웃</button>
+										<div class="user__email">kildong@email.com</div>
+									</div>
+									<div class="btn--wrap">
+										<a href="javascript:;" class="mypage"><span>내 프로필</span></a>
+										<a href="javascript:;" class="storage"><span>저장소관리</span></a>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li class="home">
+									<a href="0-user-main.html" class="depth1"><span>Home</span></a>
+								</li>
+								<li class="deploy">
+									<a href="javascript:;" class="depth1"><span>Share the GPU</span></a>
+									<ul class="depth2">
+										<li><a href="">노드 관리</a></li>
+										<li><a href="">노드 수익내역</a></li>
+										<li><a href="">노드 정산내역</a></li>
+										<li><a href="">새 노드 연결</a></li>
+									</ul> 
+								</li>
+								<li class="point">
+									<a href="javascript:;" class="depth1 is-active"><span>My Point</span></a>
+									<ul class="depth2">
+										<li><a href="" class="is-active">포인트 현황</a></li>
+										<li><a href="">포인트 충전</a></li>
+										<li><a href="">포인트 정산 / 환급</a></li>
+									</ul>
+								</li>
+								<li class="payment">
+									<a href="javascript:;" class="depth1"><span>Payment</span></a>
+								</li>
+								<li class="price">
+									<a href="javascript:;" class="depth1"><span>Price</span></a>
+								</li>
+								<li class="docs">
+									<a href="javascript:;" class="depth1"><span>Docs</span></a>
+								</li>
+							</ul>
+						</div>
+						<button type="button" class="btn__default btn__mode">Go Deploy Mode</button>
+					</div>
+				</div>
+				<div class="notification--wrap">
+					<span class="user">Honggildong@test.co.kr</span>
+					<button type="button" class="btn__noti">
+						<span class="blind">알림</span>
+						<strong>3</strong>
+					</button>
+					<div class="noti__content">
+						<dl class="noti__list--wrap">
+							<dt>
+								<strong>알림</strong>
+								<button type="button" class="btn__delete">삭제</button>
+							</dt>
+							<dd>
+								<ul class="noti__list">
+									<li>
+										<strong>Yh-ollama1 의 연결이 해제되었습니다.</strong>
+										<div class="date">12:53</div>
+									</li>
+									<!-- 읽은상태 class="on-read" -->
+									<li class="on-read">
+										<strong>Yh-ollama1 이 {XXXXXXX} 에 연결되었습니다.</strong>
+										<div class="date">11:19</div>
+									</li>
+									<!-- 공지사항 class="notice" -->
+									<li class="notice">
+										<strong>[공지] 사이트 정기 점검 일정을 안내합니다.</strong>
+										<button type="button" class="btn__default medium btn__detail">상세내용 보기</button>
+										<div class="date">11:10</div>
+									</li>
+									<li class="notice on-read">
+										<strong>[안내] 에이전트 업데이트를 진행해주세요.</strong>
+										<div class="notice__detail">
+											에이전트 업데이트가 있습니다. 이전 에이전트는 3월 20일부터 사용이 불가하므로 반드시 업데이트해주세요.
+										</div>
+										<div class="date">2월 29일 09:00</div>
+									</li>
+									<li class="notice">
+										<strong>[공지] 사이트 약관 변경 안내</strong>
+										<button type="button" class="btn__default medium btn__detail">상세내용 보기</button>
+										<div class="date">2월 28일 09:00</div>
+									</li>
+									<li>
+										<strong>Yh-ollama1 의 연결이 해제되었습니다.</strong>
+										<div class="date">12:53</div>
+									</li>
+								</ul>
+								<p class="noti__text">알림 내역은 최근 90일까지 보여지며 이전 내용은 삭제되어집니다.</p>
+							</dd>
+						</dl>
+					</div>
+				</div>
+			</div>		
+		</div>
+		<!-- //공통헤더 -->
+
+		<!-- 노드관리 -->
+		<div class="container">
+			<div class="container__inner">
+				<div class="node--wrap">
+					<div class="detail__title--wrap">
+						<button type="button" class="btn__prev-page"><span class="blind">이전으로</span></button>
+						<h3>노드 설정 - wn9d365894</h3>
+					</div>
+					<div class="node__info--wrap">
+						<h4>Name <strong>wn9d365894</strong></h4>
+						<div class="node-table--wrap">
+							<table>
+								<colgroup>
+									<!--
+									<col class="d-col1" />
+									<col class="d-col2" />
+									<col class="d-col3" />
+									<col class="d-col4" />
+									<col class="d-col5" />
+									<col class="d-col6" />-->
+									<col width="*" />
+									<col width="*" />
+									<col width="*" />
+									<col width="*" />
+									<col width="*" />
+									<col width="*" />
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">GPU 모델</th>
+										<th scope="col">GPU</th>
+										<th scope="col">vRAM</th>
+										<th scope="col">vCPUs</th>
+										<th scope="col">STORAGE</th>
+										<th scope="col">RAM</th> 
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><span class="model">H100</span></td>
+										<td>1</td>
+										<td>80GB</td>
+										<td>26</td>
+										<td>1,000GiB</td>
+										<td>200GiB</td>
+									</tr>
+							</table>
+						</div>
+					</div>
+					<div class="node__setting--wrap">
+						<h4><strong>가격 설정</strong></h4>
+						<dl>
+							<dt>기본요금</dt>
+							<dd>
+								<ul>
+									<li>
+										<span>설정 가능 가격 :</span>
+										<strong>0원 ~ 360원</strong>
+									</li>
+									<li>
+										<span>나의 설정 가격 :</span>
+										<span>설정 가능 가격의</span>
+										<em>100%</em>
+									</li>
+								</ul>
+								<div class="ip__setting--wrap">
+									<span>시간당</span>
+									<input type="text" class="ip__text" placeholder="245" />
+									<span>원</span>
+								</div>
+							</dd>
+						</dl>
+						<dl>
+							<dt>이용요금</dt>
+							<dd>
+								<ul>
+									<li>
+										<span>설정 가능 가격 :</span>
+										<strong>0원 ~ 360원</strong>
+									</li>
+									<li>
+										<span>나의 설정 가격  :</span>
+										<span>설정 가능 가격의</span>
+										<em>100%</em>
+									</li>
+								</ul>
+								<div class="ip__setting--wrap">
+									<span>시간당</span>
+									<input type="text" class="ip__text" placeholder="245" />
+									<span>원</span>
+								</div>
+							</dd>
+						</dl>
+					</div>
+					<div class="node__price--wrap">
+						<dl>
+							<dt>나의 예상 수익</dt>
+							<dd>
+								<div>
+									<span>시간당 최저</span>
+									<strong>171원/hr</strong>
+									<span>최대</span>
+									<strong>245원/hr</strong>
+								</div>
+								<div>
+									<span>월 최저</span>
+									<strong>176,400원</strong>
+									<span>최대 </span>
+									<strong>252,000원</strong>
+								</div>
+							</dd>
+						</dl>
+					</div>
+					<div class="btn--wrap ag-center">
+						<button type="button" class="btn__default w200 btn__price"><span>가격설정</span></button>
+					</div>
+					<ul class="node--noti__list">
+						<li>수익금은 설정요금의 70%로 정산되어집니다.</li>
+						<li>시간당 최저 수익은 리소스 이용율이 0%일 경우, 최대 수익은 리소스 이용율이 100%일 경우 예상 수익입니다.</li>
+						<li>월 예상 수익은 24시간 * 30일 렌트 기준으로 보여지며 렌트 시간에 따라 실제 수익은 변경될 수 있습니다.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- 공통dim -->
+		<div class="dim"></div>
+		<!-- modal : 포인트사용전환 -->
+		<div id="point_use" class="modal__container point_use"t>
+			<h2 class="modal__title">포인트 사용전환 </h2>
+			<div class="modal__content">
+				<p class="point_use--noti">수익포인트는 사용전환 후 워크로드 실행 시 사용할 수 있습니다. 전환된 포인트는 정산 신청 또는 전환 취소할 수 없습니다.</p>
+				<div class="edit--wrap">
+					<dl>
+						<dt>전환가능 포인트</dt>
+						<dd>1333.22 P</dd>
+					</dl>
+					<dl>
+						<dt>전환 포인트</dt>
+						<dd>
+							<input type="text" class="ip__text" value="1" placeholder="전환 포인트" />
+						</dd>
+					</dl>
+					<div class="btn--wrap ag-center">
+						<button type="button" class="btn__default btn__account-edit" onclick="alert('포인트 전환하기')"><span>포인트 전환</span></button>
+					</div>
+				</div>
+			</div>
+			<button type="button" class="modal__close"><span class="blind">모달닫기</span></button>
+		</div>
+	</div>
+</body>
+</html>
