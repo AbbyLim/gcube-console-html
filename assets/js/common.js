@@ -62,16 +62,23 @@ document.addEventListener("DOMContentLoaded", function () {
 	// GNB
   var btnNav = document.querySelector(".btn__nav");
 	var gnb = document.querySelector(".gnb");
+	var header = document.querySelector(".header");
   if (btnNav) {
     btnNav.addEventListener("click", function () {
 			event.stopPropagation();
 			document.documentElement.classList.toggle("nav-opened");
 			btnNav.classList.toggle("is-active");
+			if (btnNav.classList.contains("is-active")) {
+				header.style.zIndex = "11";
+			} else {
+				header.style.zIndex = "";
+			}
     });
 		document.addEventListener("click", function (event) {
 			if (gnb && !gnb.contains(event.target)) {
 				document.documentElement.classList.remove("nav-opened");
 				btnNav.classList.remove("is-active");
+				header.style.zIndex = "";
 			}
 		});
   }
@@ -190,5 +197,34 @@ document.addEventListener("DOMContentLoaded", function () {
 	setupEvents();
 	window.addEventListener('resize', () => {
 		setupEvents();
+	});
+	// 파일첨부 커스텀
+	document.querySelectorAll(".file__custom").forEach(function(input) {
+		input.addEventListener("change", function() {
+			var fileName = input.value.split("\\").pop();
+			var uploadTitle = input.parentNode.querySelector(".upload__title");
+			if (uploadTitle) {
+				uploadTitle.value = fileName;
+			}
+			var filebox = input.closest(".filebox");
+			if (filebox) {
+				if (fileName.length > 0) {
+					filebox.classList.add("on");
+				}
+			}
+		});
+	});
+	document.querySelectorAll(".filebox .btn__reset").forEach(function(btn) {
+		btn.addEventListener("click", function(e) {
+			e.preventDefault();
+			var uploadTitle = btn.parentNode.querySelector(".upload__title");
+			if (uploadTitle) {
+				uploadTitle.value = "";
+			}
+			var filebox = btn.closest(".filebox");
+			if (filebox) {
+				filebox.classList.remove("on");
+			}
+		});
 	});
 });
