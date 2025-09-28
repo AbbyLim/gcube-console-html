@@ -56,18 +56,18 @@
 									<a href="0-user-main.html" class="depth1"><span>Home</span></a>
 								</li>
 								<li class="deploy">
-									<a href="javascript:;" class="depth1"><span>Share the GPU</span></a>
+									<a href="javascript:;" class="depth1 is-active"><span>Share the GPU</span></a>
 									<ul class="depth2">
-										<li><a href="">노드 관리</a></li>
+										<li><a href="" class="is-active">노드 관리</a></li>
 										<li><a href="">노드 수익내역</a></li>
 										<li><a href="">노드 정산내역</a></li>
 										<li><a href="">새 노드 연결</a></li>
 									</ul> 
 								</li>
 								<li class="point">
-									<a href="javascript:;" class="depth1 is-active"><span>My Point</span></a>
+									<a href="javascript:;" class="depth1"><span>My Point</span></a>
 									<ul class="depth2">
-										<li><a href="" class="is-active">포인트 현황</a></li>
+										<li><a href="">포인트 현황</a></li>
 										<li><a href="">포인트 충전</a></li>
 										<li><a href="">포인트 정산 / 환급</a></li>
 									</ul>
@@ -154,13 +154,6 @@
 						<div class="node-table--wrap">
 							<table>
 								<colgroup>
-									<!--
-									<col class="d-col1" />
-									<col class="d-col2" />
-									<col class="d-col3" />
-									<col class="d-col4" />
-									<col class="d-col5" />
-									<col class="d-col6" />-->
 									<col width="*" />
 									<col width="*" />
 									<col width="*" />
@@ -268,29 +261,6 @@
 
 		<!-- 공통dim -->
 		<div class="dim"></div>
-		<!-- modal : 포인트사용전환 -->
-		<div id="point_use" class="modal__container point_use"t>
-			<h2 class="modal__title">포인트 사용전환 </h2>
-			<div class="modal__content">
-				<p class="point_use--noti">수익포인트는 사용전환 후 워크로드 실행 시 사용할 수 있습니다. 전환된 포인트는 정산 신청 또는 전환 취소할 수 없습니다.</p>
-				<div class="edit--wrap">
-					<dl>
-						<dt>전환가능 포인트</dt>
-						<dd>1333.22 P</dd>
-					</dl>
-					<dl>
-						<dt>전환 포인트</dt>
-						<dd>
-							<input type="text" class="ip__text" value="1" placeholder="전환 포인트" />
-						</dd>
-					</dl>
-					<div class="btn--wrap ag-center">
-						<button type="button" class="btn__default btn__account-edit" onclick="alert('포인트 전환하기')"><span>포인트 전환</span></button>
-					</div>
-				</div>
-			</div>
-			<button type="button" class="modal__close"><span class="blind">모달닫기</span></button>
-		</div>
 	</div>
 </body>
 </html>

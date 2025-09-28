@@ -56,18 +56,18 @@
 									<a href="0-user-main.html" class="depth1"><span>Home</span></a>
 								</li>
 								<li class="deploy">
-									<a href="javascript:;" class="depth1"><span>Share the GPU</span></a>
+									<a href="javascript:;" class="depth1 is-active"><span>Share the GPU</span></a>
 									<ul class="depth2">
 										<li><a href="">노드 관리</a></li>
 										<li><a href="">노드 수익내역</a></li>
 										<li><a href="">노드 정산내역</a></li>
-										<li><a href="">새 노드 연결</a></li>
+										<li><a href="" class="is-active">새 노드 연결</a></li>
 									</ul> 
 								</li>
 								<li class="point">
-									<a href="javascript:;" class="depth1 is-active"><span>My Point</span></a>
+									<a href="javascript:;" class="depth1"><span>My Point</span></a>
 									<ul class="depth2">
-										<li><a href="" class="is-active">포인트 현황</a></li>
+										<li><a href="">포인트 현황</a></li>
 										<li><a href="">포인트 충전</a></li>
 										<li><a href="">포인트 정산 / 환급</a></li>
 									</ul>
@@ -141,188 +141,73 @@
 		</div>
 		<!-- //공통헤더 -->
 
-		<!-- 마이포인트 -->
+		<!-- 노드관리 -->
 		<div class="container">
 			<div class="container__inner">
-				<div class="point--wrap">
+				<div class="node--wrap">
 					<div class="detail__title--wrap">
-						<h3>나의 포인트 999,999P</h3>
+						<h3>새 노드 연결</h3>
 					</div>
-					<div class="point--type__list">
-						<div class="point--type__item">
-							<dl>
-								<dt>충전 포인트</dt>
-								<dd>980 P</dd>
-							</dl>
-						</div>
-						<div class="point--type__item type2">
-							<dl>
-								<dt>충전 포인트</dt>
-								<dd>980 P</dd>
-							</dl>
-							<div class="type2--wrap">
-								<dl>
-									<dt>사용가능 포인트</dt>
-									<dd>
-										0 P
-									</dd>
-								</dl>
+					<dl class="node__create--info">
+						<dt>
+							<div>
+								GPU 공유를 시행할 장치에서 gcube agent를 실행하여 인증해주세요.<br >
+								원활한 GPU 공유를 위하여 일부 장치에서는 설치가 불가할 수 있습니다.
 							</div>
-							<button type="button" class="btn__use btn__modal" data-link="#point_use">사용전환</button>
-						</div>
-						<div class="point--type__item type2">
-							<dl>
-								<dt>무료 포인트</dt>
-								<dd>980 P</dd>
-							</dl>
-							<div class="type2--wrap">
-								<dl>
-									<dt>사용가능 포인트</dt>
-									<dd>
-										0 P
-									</dd>
-								</dl>
-							</div>
-						</div>
-						<div class="point--type__item">
-							<dl>
-								<dt>지출 포인트</dt>
-								<dd>980 P</dd>
-							</dl>
-						</div>
-						<div class="point--type__item">
-							<dl>
-								<dt>정산 포인트</dt>
-								<dd>980 P</dd>
-							</dl>
-						</div>
-						<div class="point--type__item">
-							<dl>
-								<dt>소멸 포인트</dt>
-								<dd>980 P</dd>
-							</dl>
-						</div>
-						<div class="point--type__item">
-							<dl>
-								<dt>환급 포인트</dt>
-								<dd>980 P</dd>
-							</dl>
-						</div>
-					</div>
-					<ul class="mypage__tab">
-						<li><a href="javascript:;" class="is-active">적립내역</a></li>
-						<li><a href="javascript:;">차감내역</a></li>
-					</ul>
-					<!-- 적립내역 -->
-					<div class="point__detail--wrap">
-						<div class="point__sorting--wrap">
-							<div class="checkbox--wrap">
-								<label class="checkbox__type">
-									<input type="checkbox" name="point_sorting" checked />
-									<span>전체</span>
-								</label>
-								<label class="checkbox__type">
-									<input type="checkbox" name="point_sorting" />
-									<span>충전</span>
-								</label>
-								<label class="checkbox__type">
-									<input type="checkbox" name="point_sorting" />
-									<span>수익</span>
-								</label>
-								<label class="checkbox__type">
-									<input type="checkbox" name="point_sorting" />
-									<span>무료</span>
-								</label>
-							</div>
-							<div class="status--wrap">
-								<select name="">
-									<option value="">2025년</option>
-									<option value="">2024년</option>
-									<option value="">2023년</option>
-								</select>
-								<select name="">
-									<option value="">03월</option>
-									<option value="">02월</option>
-									<option value="">01월</option>
-								</select>
-							</div>
-						</div>
-						<div class="point__detail-table--wrap">
-							<table>
-								<colgroup>
-										<col class="d-col1" />
-										<col class="d-col2" />
-										<col class="d-col3" />
-										<col width="*" />
-									</colgroup>
-								<thead>
-									<tr>
-										<th scope="col">날짜</th>
-										<th scope="col">구분</th>
-										<th scope="col">변동 포인트</th>
-										<th scope="col">내역</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>2025-02-13</td>
-										<td>충전</td>
-										<td>1,314.78 P</td>
-										<td class="ag-left">Gcube 포인트 – 20,000</td>
-									</tr>
-									<tr>
-										<td>2025-02-13</td>
-										<td>수익</td>
-										<td>1,314.78 P</td>
-										<td class="ag-left">wn9d365894 (RTX 4090)</td>
-									</tr>
-									<tr>
-										<td>2025-02-13</td>
-										<td>무료</td>
-										<td>1,314.78 P</td>
-										<td class="ag-left">카카오톡 친구 추가 이벤트</td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<th scope="row">합계</th>
-										<td></td>
-										<td>1,314.78 P</td>
-										<td></td>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
-					</div>
+							<button type="button" class="btn__default white btn__download"><span>Download Program</span></button>
+						</dt>
+						<dd>
+							<h4>[설치 기본 사양]</h4>
+							<ul>
+								<li>CPU 12 스레드(thread) 이상</li>
+								<li>Memory 16GB 이상</li>
+								<li>512GB SSD 이상</li>
+								<li>Nvidia RTX 2060</li>
+								<li>(GPU memory 7GB 이상)</li>
+								<li>※ Windows 10 Pro 22H2 이후</li>
+								<li>※ Nvidia Driver Version 550</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl class="node__create--guide">
+						<dt>* gcube agent 실행 및 인증방법</dt>
+						<dd>
+							<ol>
+								<li>
+									<img src="assets/images/img_guide1.png" alt="gcube agent 실행 및 인증방법" />
+									<p>1.Setup</p>
+								</li>
+								<li>
+									<img src="assets/images/img_guide2.png" alt="gcube agent 실행 및 인증방법" />
+									<p>2.Downloading</p>
+								</li>
+								<li>
+									<img src="assets/images/img_guide3.png" alt="gcube agent 실행 및 인증방법" />
+									<p>3.Login</p>
+								</li>
+							</ol>
+							<ol>
+								<li>
+									<img src="assets/images/img_guide4.png" alt="gcube agent 실행 및 인증방법" />
+									<p>4.Starting</p>
+								</li>
+								<li>
+									<img src="assets/images/img_guide5.png" alt="gcube agent 실행 및 인증방법" />
+									<p>5.Running</p>
+								</li>
+								<li>
+									<img src="assets/images/img_guide6.png" alt="gcube agent 실행 및 인증방법" />
+									<p>6.Node Information</p>
+								</li>
+							</ol>
+						</dd>
+					</dl>
 				</div>
 			</div>
 		</div>
 
 		<!-- 공통dim -->
 		<div class="dim"></div>
-		<!-- modal : 포인트사용전환 -->
-		<div id="point_use" class="modal__container point_use">
-			<h2 class="modal__title">포인트 사용전환 </h2>
-			<div class="modal__content">
-				<p class="point_use--noti">수익포인트는 사용전환 후 워크로드 실행 시 사용할 수 있습니다. 전환된 포인트는 정산 신청 또는 전환 취소할 수 없습니다.</p>
-				<div class="edit--wrap">
-					<dl>
-						<dt>전환가능 포인트</dt>
-						<dd>1333.22 P</dd>
-					</dl>
-					<dl>
-						<dt>전환 포인트</dt>
-						<dd>
-							<input type="text" class="ip__text" value="1" placeholder="전환 포인트" />
-						</dd>
-					</dl>
-					<div class="btn--wrap ag-center">
-						<button type="button" class="btn__default btn__account-edit" onclick="alert('포인트 전환하기')"><span>포인트 전환</span></button>
-					</div>
-				</div>
-			</div>
-			<button type="button" class="modal__close"><span class="blind">모달닫기</span></button>
-		</div>
 	</div>
 </body>
 </html>
