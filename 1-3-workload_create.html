@@ -46,6 +46,7 @@
 								<div class="user--wrap">
 									<div class="user__name">
 										<strong>홍길동길동</strong>
+										<span class="point">99,999,999P</span>
 										<button type="button" class="btn__logout">로그아웃</button>
 										<div class="user__email">kildong@email.com</div>
 									</div>
@@ -91,6 +92,7 @@
 					</div>
 				</div>
 				<div class="notification--wrap">
+					<span class="point">99,999,999P</span>
 					<span class="user">Honggildong@test.co.kr</span>
 					<button type="button" class="btn__noti">
 						<span class="blind">알림</span>
@@ -153,7 +155,10 @@
 						<div class="monitor__item">
 							<dl class="create__description">
 								<dt>워크로드 설명</dt>
-								<dd><input type="text" placeholder="검색어를 입력해주세요." class="ip__text w-all" /></dd>
+								<dd>
+									<input type="text" placeholder="검색어를 입력해주세요." class="ip__text w-all" />
+									<p class="text__validation error">validate 내용 표시될 영역(에러)</p>
+								</dd>
 							</dl>
 						</div>
 						<!-- 컨테이너 설정 -->
@@ -238,6 +243,7 @@
 												<input type="radio" class="storage__check" name="storage" />
 												<span>Amazon ECR</span>
 											</label>
+											<p class="text__validation valid">validate 내용 표시될 영역(적합)</p>
 										</dd>
 									</dl>
 									<dl class="creat__form__item">
@@ -249,12 +255,14 @@
 												<input type="file" id="joinInfo1" class="file__custom">
 												<button class="btn__reset"><img src="assets/images/btn_clear.svg" alt="파일초기화" /></button>
 											</div>
+											<p class="text__validation error">validate 내용 표시될 영역(에러)</p>
 										</dd>     
 									</dl>
 									<dl class="creat__form__item">
 										<dt>컨테이너 포트</dt>
 										<dd>
 											<input type="text" class="ip__text w200" placeholder="8000" />
+											<p class="text__validation error">validate 내용 표시될 영역(에러)</p>
 										</dd>
 									</dl>
 									<dl class="creat__form__item">
@@ -341,132 +349,120 @@
 									<dd>
 										<div class="price__item--wrap">
 											<div class="price__item">
-												<label>
-													<input type="radio" name="gpu_item1" />
-													<div class="price__item--label">
-														<h4>RTX 4090 / 32GB x 1</h4>
-														<div class="product__spec">
-															<dl>
-																<dt>vCPU</dt>
-																<dd>26</dd>
-															</dl>
-															<dl>
-																<dt>RAM</dt>
-																<dd>200GB</dd>
-															</dl>
-															<dl>
-																<dt>Storage</dt>
-																<dd>1000GB</dd>
-															</dl>
-														</div>
-														<div class="product__price">
-															<dl>
-																<dt>최소비용/hr</dt>
-																<dd>910원</dd>
-															</dl>
-															<dl>
-																<dt>최대비용/hr</dt>
-																<dd>1,300원</dd>
-															</dl>
-														</div>
+												<div class="price__item--label is-checked"><!-- 2.등록수정을 위해 선택된 class="is-checked" -->
+													<h4>RTX 4090 / 32GB x 1</h4>
+													<div class="product__spec">
+														<dl>
+															<dt>vCPU</dt>
+															<dd>26</dd>
+														</dl>
+														<dl>
+															<dt>RAM</dt>
+															<dd>200GB</dd>
+														</dl>
+														<dl>
+															<dt>Storage</dt>
+															<dd>1000GB</dd>
+														</dl>
 													</div>
-												</label>
+													<div class="product__price">
+														<dl>
+															<dt>최소비용/hr</dt>
+															<dd>910원</dd>
+														</dl>
+														<dl>
+															<dt>최대비용/hr</dt>
+															<dd>1,300원</dd>
+														</dl>
+													</div>
+												</div>
 											</div>
 											<div class="price__item">
-												<label>
-													<input type="radio" name="gpu_item1" />
-													<div class="price__item--label">
-														<h4>RTX 4090 / 32GB x 1</h4>
-														<div class="product__spec">
-															<dl>
-																<dt>vCPU</dt>
-																<dd>26</dd>
-															</dl>
-															<dl>
-																<dt>RAM</dt>
-																<dd>200GB</dd>
-															</dl>
-															<dl>
-																<dt>Storage</dt>
-																<dd>1000GB</dd>
-															</dl>
-														</div>
-														<div class="product__price">
-															<dl>
-																<dt>최소비용/hr</dt>
-																<dd>910원</dd>
-															</dl>
-															<dl>
-																<dt>최대비용/hr</dt>
-																<dd>1,300원</dd>
-															</dl>
-														</div>
+												<div class="price__item--label disabled"><!-- 4.사용불가 class="disabled" -->
+													<h4>RTX 4090 / 32GB x 1</h4>
+													<div class="product__spec">
+														<dl>
+															<dt>vCPU</dt>
+															<dd>26</dd>
+														</dl>
+														<dl>
+															<dt>RAM</dt>
+															<dd>200GB</dd>
+														</dl>
+														<dl>
+															<dt>Storage</dt>
+															<dd>1000GB</dd>
+														</dl>
 													</div>
-												</label>
+													<div class="product__price">
+														<dl>
+															<dt>최소비용/hr</dt>
+															<dd>910원</dd>
+														</dl>
+														<dl>
+															<dt>최대비용/hr</dt>
+															<dd>1,300원</dd>
+														</dl>
+													</div>
+												</div>
 											</div>
 											<div class="price__item">
-												<label>
-													<input type="radio" name="gpu_item1" />
-													<div class="price__item--label">
-														<h4>RTX 4090 / 32GB x 1</h4>
-														<div class="product__spec">
-															<dl>
-																<dt>vCPU</dt>
-																<dd>26</dd>
-															</dl>
-															<dl>
-																<dt>RAM</dt>
-																<dd>200GB</dd>
-															</dl>
-															<dl>
-																<dt>Storage</dt>
-																<dd>1000GB</dd>
-															</dl>
-														</div>
-														<div class="product__price">
-															<dl>
-																<dt>최소비용/hr</dt>
-																<dd>910원</dd>
-															</dl>
-															<dl>
-																<dt>최대비용/hr</dt>
-																<dd>1,300원</dd>
-															</dl>
-														</div>
+												<div class="price__item--label is-activated"><!-- 3. 현재 워크로드에 등록된 class="is-activated" -->
+													<h4>RTX 4090 / 32GB x 1</h4>
+													<div class="product__spec">
+														<dl>
+															<dt>vCPU</dt>
+															<dd>26</dd>
+														</dl>
+														<dl>
+															<dt>RAM</dt>
+															<dd>200GB</dd>
+														</dl>
+														<dl>
+															<dt>Storage</dt>
+															<dd>1000GB</dd>
+														</dl>
 													</div>
-												</label>
+													<div class="product__price">
+														<dl>
+															<dt>최소비용/hr</dt>
+															<dd>910원</dd>
+														</dl>
+														<dl>
+															<dt>최대비용/hr</dt>
+															<dd>1,300원</dd>
+														</dl>
+													</div>
+												</div>
 											</div>
 											<div class="price__item">
-												<label>
-													<input type="radio" name="gpu_item1" />
-													<div class="price__item--label">
-														<h4>RTX 4090 / 32GB x 1</h4>
-														<div class="product__spec">
-															<dl>
-																<dt>vCPU</dt>
-																<dd>26</dd>
-															</dl>
-															<dl>
-																<dt>RAM</dt>
-																<dd>200GB</dd>
-															</dl>
-															<dl>
-																<dt>Storage</dt>
-																<dd>1000GB</dd>
-															</dl>
-														</div>
-														<div class="product__price">
-															<dl>
-																<dt>최소비용/hr</dt>
-																<dd>910원</dd>
-															</dl>
-															<dl>
-																<dt>최대비용/hr</dt>
-																<dd>1,300원</dd>
-															</dl>
-														</div>
+												<div class="price__item--label">
+													<h4>RTX 4090 / 32GB x 1</h4>
+													<div class="product__spec">
+														<dl>
+															<dt>vCPU</dt>
+															<dd>26</dd>
+														</dl>
+														<dl>
+															<dt>RAM</dt>
+															<dd>200GB</dd>
+														</dl>
+														<dl>
+															<dt>Storage</dt>
+															<dd>1000GB</dd>
+														</dl>
 													</div>
-												</label>
+													<div class="product__price">
+														<dl>
+															<dt>최소비용/hr</dt>
+															<dd>910원</dd>
+														</dl>
+														<dl>
+															<dt>최대비용/hr</dt>
+															<dd>1,300원</dd>
+														</dl>
+													</div>
+												</div>
 											</div>
 										</div>
 									</dd>
@@ -477,196 +473,178 @@
 									<dd>
 										<div class="price__item--wrap">
 											<div class="price__item">
-												<label>
-													<input type="radio" name="gpu_item2" />
-													<div class="price__item--label">
-														<h4>RTX 4090 / 32GB x 1</h4>
-														<div class="product__spec">
-															<dl>
-																<dt>vCPU</dt>
-																<dd>26</dd>
-															</dl>
-															<dl>
-																<dt>RAM</dt>
-																<dd>200GB</dd>
-															</dl>
-															<dl>
-																<dt>Storage</dt>
-																<dd>1000GB</dd>
-															</dl>
-														</div>
-														<div class="product__price">
-															<dl>
-																<dt>최소비용/hr</dt>
-																<dd>910원</dd>
-															</dl>
-															<dl>
-																<dt>최대비용/hr</dt>
-																<dd>1,300원</dd>
-															</dl>
-														</div>
+												<div class="price__item--label">
+													<h4>RTX 4090 / 32GB x 1</h4>
+													<div class="product__spec">
+														<dl>
+															<dt>vCPU</dt>
+															<dd>26</dd>
+														</dl>
+														<dl>
+															<dt>RAM</dt>
+															<dd>200GB</dd>
+														</dl>
+														<dl>
+															<dt>Storage</dt>
+															<dd>1000GB</dd>
+														</dl>
 													</div>
-												</label>
+													<div class="product__price">
+														<dl>
+															<dt>최소비용/hr</dt>
+															<dd>910원</dd>
+														</dl>
+														<dl>
+															<dt>최대비용/hr</dt>
+															<dd>1,300원</dd>
+														</dl>
+													</div>
+												</div>
 											</div>
 											<div class="price__item">
-												<label>
-													<input type="radio" name="gpu_item2" />
-													<div class="price__item--label">
-														<h4>RTX 4090 / 32GB x 1</h4>
-														<div class="product__spec">
-															<dl>
-																<dt>vCPU</dt>
-																<dd>26</dd>
-															</dl>
-															<dl>
-																<dt>RAM</dt>
-																<dd>200GB</dd>
-															</dl>
-															<dl>
-																<dt>Storage</dt>
-																<dd>1000GB</dd>
-															</dl>
-														</div>
-														<div class="product__price">
-															<dl>
-																<dt>최소비용/hr</dt>
-																<dd>910원</dd>
-															</dl>
-															<dl>
-																<dt>최대비용/hr</dt>
-																<dd>1,300원</dd>
-															</dl>
-														</div>
+												<div class="price__item--label">
+													<h4>RTX 4090 / 32GB x 1</h4>
+													<div class="product__spec">
+														<dl>
+															<dt>vCPU</dt>
+															<dd>26</dd>
+														</dl>
+														<dl>
+															<dt>RAM</dt>
+															<dd>200GB</dd>
+														</dl>
+														<dl>
+															<dt>Storage</dt>
+															<dd>1000GB</dd>
+														</dl>
 													</div>
-												</label>
+													<div class="product__price">
+														<dl>
+															<dt>최소비용/hr</dt>
+															<dd>910원</dd>
+														</dl>
+														<dl>
+															<dt>최대비용/hr</dt>
+															<dd>1,300원</dd>
+														</dl>
+													</div>
+												</div>
 											</div>
 											<div class="price__item">
-												<label>
-													<input type="radio" name="gpu_item2" />
-													<div class="price__item--label">
-														<h4>RTX 4090 / 32GB x 1</h4>
-														<div class="product__spec">
-															<dl>
-																<dt>vCPU</dt>
-																<dd>26</dd>
-															</dl>
-															<dl>
-																<dt>RAM</dt>
-																<dd>200GB</dd>
-															</dl>
-															<dl>
-																<dt>Storage</dt>
-																<dd>1000GB</dd>
-															</dl>
-														</div>
-														<div class="product__price">
-															<dl>
-																<dt>최소비용/hr</dt>
-																<dd>910원</dd>
-															</dl>
-															<dl>
-																<dt>최대비용/hr</dt>
-																<dd>1,300원</dd>
-															</dl>
-														</div>
+												<div class="price__item--label">
+													<h4>RTX 4090 / 32GB x 1</h4>
+													<div class="product__spec">
+														<dl>
+															<dt>vCPU</dt>
+															<dd>26</dd>
+														</dl>
+														<dl>
+															<dt>RAM</dt>
+															<dd>200GB</dd>
+														</dl>
+														<dl>
+															<dt>Storage</dt>
+															<dd>1000GB</dd>
+														</dl>
 													</div>
-												</label>
+													<div class="product__price">
+														<dl>
+															<dt>최소비용/hr</dt>
+															<dd>910원</dd>
+														</dl>
+														<dl>
+															<dt>최대비용/hr</dt>
+															<dd>1,300원</dd>
+														</dl>
+													</div>
+												</div>
 											</div>
 											<div class="price__item">
-												<label>
-													<input type="radio" name="gpu_item2" />
-													<div class="price__item--label">
-														<h4>RTX 4090 / 32GB x 1</h4>
-														<div class="product__spec">
-															<dl>
-																<dt>vCPU</dt>
-																<dd>26</dd>
-															</dl>
-															<dl>
-																<dt>RAM</dt>
-																<dd>200GB</dd>
-															</dl>
-															<dl>
-																<dt>Storage</dt>
-																<dd>1000GB</dd>
-															</dl>
-														</div>
-														<div class="product__price">
-															<dl>
-																<dt>최소비용/hr</dt>
-																<dd>910원</dd>
-															</dl>
-															<dl>
-																<dt>최대비용/hr</dt>
-																<dd>1,300원</dd>
-															</dl>
-														</div>
+												<div class="price__item--label">
+													<h4>RTX 4090 / 32GB x 1</h4>
+													<div class="product__spec">
+														<dl>
+															<dt>vCPU</dt>
+															<dd>26</dd>
+														</dl>
+														<dl>
+															<dt>RAM</dt>
+															<dd>200GB</dd>
+														</dl>
+														<dl>
+															<dt>Storage</dt>
+															<dd>1000GB</dd>
+														</dl>
 													</div>
-												</label>
+													<div class="product__price">
+														<dl>
+															<dt>최소비용/hr</dt>
+															<dd>910원</dd>
+														</dl>
+														<dl>
+															<dt>최대비용/hr</dt>
+															<dd>1,300원</dd>
+														</dl>
+													</div>
+												</div>
 											</div>
 											<div class="price__item">
-												<label>
-													<input type="radio" name="gpu_item2" />
-													<div class="price__item--label">
-														<h4>RTX 4090 / 32GB x 1</h4>
-														<div class="product__spec">
-															<dl>
-																<dt>vCPU</dt>
-																<dd>26</dd>
-															</dl>
-															<dl>
-																<dt>RAM</dt>
-																<dd>200GB</dd>
-															</dl>
-															<dl>
-																<dt>Storage</dt>
-																<dd>1000GB</dd>
-															</dl>
-														</div>
-														<div class="product__price">
-															<dl>
-																<dt>최소비용/hr</dt>
-																<dd>910원</dd>
-															</dl>
-															<dl>
-																<dt>최대비용/hr</dt>
-																<dd>1,300원</dd>
-															</dl>
-														</div>
+												<div class="price__item--label">
+													<h4>RTX 4090 / 32GB x 1</h4>
+													<div class="product__spec">
+														<dl>
+															<dt>vCPU</dt>
+															<dd>26</dd>
+														</dl>
+														<dl>
+															<dt>RAM</dt>
+															<dd>200GB</dd>
+														</dl>
+														<dl>
+															<dt>Storage</dt>
+															<dd>1000GB</dd>
+														</dl>
 													</div>
-												</label>
+													<div class="product__price">
+														<dl>
+															<dt>최소비용/hr</dt>
+															<dd>910원</dd>
+														</dl>
+														<dl>
+															<dt>최대비용/hr</dt>
+															<dd>1,300원</dd>
+														</dl>
+													</div>
+												</div>
 											</div>
 											<div class="price__item">
-												<label>
-													<input type="radio" name="gpu_item2" />
-													<div class="price__item--label">
-														<h4>RTX 4090 / 32GB x 1</h4>
-														<div class="product__spec">
-															<dl>
-																<dt>vCPU</dt>
-																<dd>26</dd>
-															</dl>
-															<dl>
-																<dt>RAM</dt>
-																<dd>200GB</dd>
-															</dl>
-															<dl>
-																<dt>Storage</dt>
-																<dd>1000GB</dd>
-															</dl>
-														</div>
-														<div class="product__price">
-															<dl>
-																<dt>최소비용/hr</dt>
-																<dd>910원</dd>
-															</dl>
-															<dl>
-																<dt>최대비용/hr</dt>
-																<dd>1,300원</dd>
-															</dl>
-														</div>
+												<div class="price__item--label">
+													<h4>RTX 4090 / 32GB x 1</h4>
+													<div class="product__spec">
+														<dl>
+															<dt>vCPU</dt>
+															<dd>26</dd>
+														</dl>
+														<dl>
+															<dt>RAM</dt>
+															<dd>200GB</dd>
+														</dl>
+														<dl>
+															<dt>Storage</dt>
+															<dd>1000GB</dd>
+														</dl>
 													</div>
-												</label>
+													<div class="product__price">
+														<dl>
+															<dt>최소비용/hr</dt>
+															<dd>910원</dd>
+														</dl>
+														<dl>
+															<dt>최대비용/hr</dt>
+															<dd>1,300원</dd>
+														</dl>
+													</div>
+												</div>
 											</div>
 										</div>
 									</dd>
@@ -741,10 +719,11 @@
 									<dd>
 										<div class="variable--wrap">
 											<div class="memory--wrap">
-												<input type="text" class="ip__text w200" placeholder="1" />
+												<input type="number" class="ip__text w200" placeholder="1" />
 												<span>GB</span>
 											</div>
 										</div>
+										<p class="text__validation error">validate 내용 표시될 영역(에러)</p>
 									</dd>
 								</dl>
 								<dl class="creat__form__item">

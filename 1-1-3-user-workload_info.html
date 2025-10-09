@@ -42,6 +42,7 @@
 								<div class="user--wrap">
 									<div class="user__name">
 										<strong>홍길동길동</strong>
+										<span class="point">99,999,999P</span>
 										<button type="button" class="btn__logout">로그아웃</button>
 										<div class="user__email">kildong@email.com</div>
 									</div>
@@ -87,6 +88,7 @@
 					</div>
 				</div>
 				<div class="notification--wrap">
+					<span class="point">99,999,999P</span>
 					<span class="user">Honggildong@test.co.kr</span>
 					<button type="button" class="btn__noti">
 						<span class="blind">알림</span>
@@ -224,33 +226,33 @@
 								</div>
 							</div>
 							<h3>옵션</h3>
-							<div class="inline--wrap">
-								<div class="inline__item">
-									<dl class="grid__item">
-										<dt>컨테이너 명령</dt>
-										<dd>0</dd>
-									</dl>
-								</div>
-								<div class="inline__item">
-									<dl class="grid__item">
-										<dt>컨테이너 환경 변수</dt>
-										<dd>00</dd>
-									</dl>
-								</div>
-								<div class="inline__item type2">
-									<dl class="grid__item">
-										<dt>레플리카</dt>
-										<dd>1</dd>
-									</dl>
-									<dl class="grid__item">
-										<dt>최소 CUDA 버전</dt>
-										<dd>1</dd>
-									</dl>
-									<dl class="grid__item">
-										<dt>공유 메모리</dt>
-										<dd>1</dd>
-									</dl>
-								</div>
+							<div class="block--wrap">
+								<dl class="grid__item">
+									<dt>컨테이너 명령</dt>
+									<dd>0</dd>
+								</dl>
+								<dl class="grid__item">
+									<dt>레플리카</dt>
+									<dd>1</dd>
+								</dl>
+								<dl class="grid__item">
+									<dt>최소 CUDA 버전</dt>
+									<dd>1</dd>
+								</dl>
+								<dl class="grid__item">
+									<dt>공유 메모리</dt>
+									<dd>1</dd>
+								</dl>
+								<dl class="grid__item">
+									<dt>컨테이너 환경 변수</dt>
+									<dd>
+										<ul class="variables__list">
+											<li><span>{key}</span><span>{data text}</span></li>
+											<li><span>{key}</span><span>{data text}</span></li>
+											<li><span>{key}</span><span>{data text}</span></li>
+										</ul>
+									</dd>
+								</dl>
 							</div>
 						</div>
 						<div class="info__box type2">
@@ -266,7 +268,11 @@
 								</dl>
 								<dl>
 									<dt>상태</dt>
-									<dd><span class="workload__status deploy">실행</span></dd>
+									<dd>
+										<span class="workload__status">대기</span><!-- 대기 / deploy: 실행 / ended:  종료 -->
+										<span class="workload__status deploy">실행</span>
+										<span class="workload__status ended">종료</span>
+									</dd>
 								</dl>
 							</div>
 							<div class="deploy__box__detail">
