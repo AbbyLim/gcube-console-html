@@ -28,7 +28,7 @@
 	<script type="text/javascript" src="assets/js/jquery-3.6.0.min.js"></script>
 	<script  src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
-	<script type="text/javascript" src="assets/js/swiper-bundle.min.js">< /script>
+	<script type="text/javascript" src="assets/js/swiper-bundle.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 	<script type="text/javascript" src="assets/js/common.js"></script>
 </head>
@@ -173,47 +173,93 @@
 											<span></span>
 										</div>
 									</label>
-									<ul class="template__list">
-										<li>
-											<label class="template__item">
-												<input type="radio" class="template__check" name="template__check"  checked />
-												<div class="template__content">
-													<div class="template__title">
-														<div class="thumb"><img src="assets/images/ico_gnb1.png" alt="템플릿썸네일" /></div>
-														<div class="name">템플릿 명1</div>
+									<div class="swiper templateSwiper">
+										<ul class="template__list swiper-wrapper">
+											<li class="swiper-slide">
+												<label class="template__item">
+													<input type="radio" class="template__check" name="template__check"  checked />
+													<div class="template__content">
+														<div class="template__title">
+															<div class="thumb"><img src="assets/images/ico_gnb1.png" alt="템플릿썸네일" /></div>
+															<div class="name">템플릿 명1</div>
+														</div>
+														<div class="img__url">https://e9e85177.service.gcube.ai:24999</div>
 													</div>
-													<div class="img__url">https://e9e85177.service.gcube.ai:24999</div>
-												</div>
-											</label>
-											<button type="button" class="btn__modal" data-link="#template__detail1">자세히 보기</button>
-										</li>
-										<li>
-											<label class="template__item">
-												<input type="radio" class="template__check" name="template__check" />
-												<div class="template__content">
-													<div class="template__title">
-														<div class="thumb"><img src="assets/images/@sample1.jpg" alt="템플릿썸네일" /></div>
-														<div class="name">템플릿 명2</div>
+												</label>
+												<button type="button" class="btn__modal" data-link="#template__detail1">자세히 보기</button>
+											</li>
+											<li class="swiper-slide">
+												<label class="template__item">
+													<input type="radio" class="template__check" name="template__check" />
+													<div class="template__content">
+														<div class="template__title">
+															<div class="thumb"><img src="assets/images/@sample1.jpg" alt="템플릿썸네일" /></div>
+															<div class="name">템플릿 명2</div>
+														</div>
+														<div class="img__url">https://e9e85177.service.gcube.ai:24999</div>
 													</div>
-													<div class="img__url">https://e9e85177.service.gcube.ai:24999</div>
-												</div>
-											</label>
-											<button type="button" class="btn__modal" data-link="#template__detail2">자세히 보기</button>
-										</li>
-										<li>
-											<label class="template__item">
-												<input type="radio" class="template__check" name="template__check" />
-												<div class="template__content">
-													<div class="template__title">
-														<div class="thumb"><img src="assets/images/@sample2.jpg" alt="템플릿썸네일" /></div>
-														<div class="name">템플릿 명3</div>
+												</label>
+												<button type="button" class="btn__modal" data-link="#template__detail2">자세히 보기</button>
+											</li>
+											<li class="swiper-slide">
+												<label class="template__item">
+													<input type="radio" class="template__check" name="template__check" />
+													<div class="template__content">
+														<div class="template__title">
+															<div class="thumb"><img src="assets/images/@sample2.jpg" alt="템플릿썸네일" /></div>
+															<div class="name">템플릿 명3</div>
+														</div>
+														<div class="img__url">https://e9e85177.service.gcube.ai:24999</div>
 													</div>
-													<div class="img__url">https://e9e85177.service.gcube.ai:24999</div>
-												</div>
-											</label>
-											<button type="button" class="btn__modal" data-link="#template__detail3">자세히 보기</button>
-										</li>
-									</ul>
+												</label>
+												<button type="button" class="btn__modal" data-link="#template__detail3">자세히 보기</button>
+											</li>
+											<li class="swiper-slide">
+												<label class="template__item">
+													<input type="radio" class="template__check" name="template__check" />
+													<div class="template__content">
+														<div class="template__title">
+															<div class="thumb"><img src="assets/images/@sample2.jpg" alt="템플릿썸네일" /></div>
+															<div class="name">템플릿 명3</div>
+														</div>
+														<div class="img__url">https://e9e85177.service.gcube.ai:24999</div>
+													</div>
+												</label>
+												<button type="button" class="btn__modal" data-link="#template__detail3">자세히 보기</button>
+											</li>
+											<li class="swiper-slide">
+												<label class="template__item">
+													<input type="radio" class="template__check" name="template__check" />
+													<div class="template__content">
+														<div class="template__title">
+															<div class="thumb"><img src="assets/images/@sample2.jpg" alt="템플릿썸네일" /></div>
+															<div class="name">템플릿 명3</div>
+														</div>
+														<div class="img__url">https://e9e85177.service.gcube.ai:24999</div>
+													</div>
+												</label>
+												<button type="button" class="btn__modal" data-link="#template__detail3">자세히 보기</button>
+											</li>
+										</ul>
+										<div class="swiper-pagination"></div>
+									</div>
+									<script>
+										var swiper = new Swiper(".templateSwiper", {
+											slidesPerView: 1.7,
+											spaceBetween: 8,
+											pagination: {
+												el: ".templateSwiper .swiper-pagination",
+											},
+											breakpoints: {
+												801: {
+													slidesPerView: 3,
+													spaceBetween: 21,
+												},
+											},
+											observer: true,
+											observeParents: true,
+										});
+									</script>
 								</div>
 								<div class="create__form--wrap template__info--wrap">
 									<dl class="creat__form__item">
